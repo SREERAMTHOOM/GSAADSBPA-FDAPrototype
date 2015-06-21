@@ -1,0 +1,14 @@
+<h1>Enforcements !</h1>
+
+<%= form_tag '/enforcements/retrieve' do %>
+    <%=label_tag 'From' %>
+    <%=text_field_tag 'From', @from%>
+
+    <%=label_tag 'To' %>
+    <%=text_field_tag 'To', @to%>
+
+    <%=label_tag 'Limit' %>
+    <%=text_field_tag 'Limit', @limit%>
+
+    <div><%= submit_tag 'Get' %></div>
+<% end %>

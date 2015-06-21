@@ -1,0 +1,24 @@
+<table border=1>
+  <tr>
+    <th>Event id</th>
+    <th>Recall#</th>
+    <th>Initiaton Date</th>
+    <th>Type</th>
+    <th>Firm</th>
+    <th>Report Date</th>
+    <th>Classification</th>
+    <th>Status</th>
+  </tr>
+<% @rubyObj['results'].each do |result| %>
+  <tr>
+    <td><%= result["event_id"] %></td>
+    <td><%= result["recall_number"] %></td>
+    <td><%= result["recall_initiation_date"] %></td>
+    <td><%= result["product_type"] %></td>
+    <td><%= result["recalling_firm"] %></td>
+    <td><%= result["report_date"] %></td>
+    <td><%= result["classification"] %></td>
+    <td><%= result["status"] %></td>
+  </tr>
+<% end %>
+</table>
