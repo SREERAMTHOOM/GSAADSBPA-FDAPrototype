@@ -1,5 +1,7 @@
 <h1>Enforcements !</h1>
 
+<%= line_chart "/enforcements/report", discrete: true %>
+
 <%= form_tag '/enforcements/retrieve' do %>
     <%=label_tag 'From' %>
     <%=text_field_tag 'From', @from%>

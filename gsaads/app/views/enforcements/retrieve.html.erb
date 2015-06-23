@@ -1,4 +1,38 @@
+<% content_for :for_head do %>
+<script>
+  function showDialog(id) {
+    $( "#dialog-message" ).dialog({
+      autoOpen : false,
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+    $("#innerMessage").innerHTML = "<b> Here is the content for event" + id + " and the later text";
+    alert("this is alert : " + id );
+    $("#dialog-message").dialog("open");
+  }
+</script>
+<% end %>
+
+
 <h1>Enforcements !</h1>
+
+
+
+<div id="dialog-message" title="Download complete" style="display: none;">
+  <div id="innerMessage">
+  <p>
+    Your files have downloaded successfully into the My Downloads folder.
+  </p>
+  <p>
+    Currently using <b>36% of your storage space</b>.
+  </p>
+  </div>
+</div>
+
 
 <%= form_tag '/enforcements/retrieve' do %>
     <%=label_tag 'From' %>
@@ -17,7 +51,9 @@
 
 <% end %>
 <br>
-Total results: <%= @rubyObj['meta']['results']['limit'] %>
+Requested URL: <%= @requestUrl %>
+<br>
+Total results: <%= $rubyObj['meta']['results']['limit'] %>
 <br>
 Results:<br>
 <%= render 'table' %>

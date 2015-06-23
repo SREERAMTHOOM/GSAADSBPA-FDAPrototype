@@ -1,0 +1,44 @@
+<h1>Enforcement Event Details !</h1>
+
+  <table border=1 width=90%>
+  <tr>
+	<th width=20%>Field</th>
+	<th width=80%>Value</th>
+  </tr>
+  <tr>
+	<td>Event Id</td>
+	<td><%= @eventObj['event_id'] %></td>
+  </tr>
+  <tr>
+	<td>Recall#</td>
+	<td><%= @eventObj['recall_number'] %></td>
+  </tr>
+  <tr>
+	<td>Initial Date</td>
+	<td><%= @eventObj['recall_initiation_date'] %></td>
+  </tr>
+  <tr>
+	<td>Type</td>
+	<td><%= @eventObj['product_type'] %></td>
+  </tr>
+  <tr>
+	<td>Firm</td>
+	<td><%= @eventObj['recalling_firm'] %></td>
+  </tr>
+  <tr>
+	<td>Report Date</td>
+	<td><%= @eventObj['report_date'] %></td>
+  </tr>
+  <tr>
+	<td>Classification</td>
+	<td><%= @eventObj['classification'] %></td>
+  </tr>
+  <tr>
+	<td>Status</td>
+	<td><%= @eventObj['status'] %></td>
+  </tr>
+  <tr>
+	<td>Content</td>
+	<td><textarea style="border: none; width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;" rows=20><%= @eventObj %></textarea></td>
+  </tr>
+  </table>

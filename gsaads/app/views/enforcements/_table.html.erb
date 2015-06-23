@@ -9,9 +9,10 @@
     <th>Classification</th>
     <th>Status</th>
   </tr>
-<% @rubyObj['results'].each do |result| %>
+<% $rubyObj['results'].each_with_index do |result, index| %>
+  <% puts index %>
   <tr>
-    <td><%= result["event_id"] %></td>
+    <td><%= link_to result["event_id"], :controller => "enforcements", :action => "display", :eventId => index %></td>
     <td><%= result["recall_number"] %></td>
     <td><%= result["recall_initiation_date"] %></td>
     <td><%= result["product_type"] %></td>
