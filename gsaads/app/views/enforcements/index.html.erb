@@ -1,18 +1,80 @@
-<h1>Enforcements !</h1>
+<main class="content">
+	<div class="slider">
+		<ul class="slides">
+			<li>
+				<div class="container">                     
+					<div class="slide-caption">
+						<h2 class="slide-title">Duis aute reprehenderit</h2>
+						<small class="slide-subtitle">Nemo enom ipsam voluptatem voluptas</small>
+						<div class="slide-summary">
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, illum laborum odit est quibusdam, molestias quaerat qui, eveniet voluptate debitis, earum dolorem. </p>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul> <!-- .slides -->
+	</div> <!-- .slider -->
 
-<div id="myChart" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
-	loadChartData('https://api.fda.gov/device/event.json?count=date_received', "myChart");
-</script>
+	
+	<div class="fullwidth-block about-section">
 
-<%= form_tag '/enforcements/retrieve' do %>
-    <%=label_tag 'From' %>
-    <%=text_field_tag 'From', @from%>
+		<div class="container">
 
-    <%=label_tag 'To' %>
-    <%=text_field_tag 'To', @to%>
+			<div class="row">
 
-    <%=label_tag 'Limit' %>
-    <%=text_field_tag 'Limit', @limit%>
+				<div class="col-md-6 wow fadeInUp">
+					<h2>Latest Adverse Events In Virginia</h2>
+					
+					<div class="boxer">
+						<div class="box-row">
+							<div class="box">Event Type</div>
+							<div class="box">MDR key </div>
+							<div class="box">Device</div>
+							<div class="box">Event</div>
+						</div>
+					<% $advEvents.each_with_index do |result, index| %>
+						<div class="box-row1">
+							<div class="box"><%= result["event_type"] %></div>
+							<div class="box"><%= result["mdr_text"][0]["mdr_text_key"] %></div>
+							<div class="box"><%= result["patient"][0]["date_received"] %></div>
+							<div class="box"><%= result["device"][0]["device_event_key"] %></div>
+						</div>
+					<% end %>
+					</div>
 
-    <div><%= submit_tag 'Get' %></div>
-<% end %>
+					<a href="" class="button">Read More</a><br>
+					<%= line_chart "/enforcements/devicereport?type=device", discrete: true %>
+					<h3>Aliquam nibh quam iaculis tempis</h3>
+				</div>
+
+				<div class="col-md-6 wow fadeInUp">
+					<h2>Latest Adverse Event In Virginia</h2>
+					
+					<div class="boxer">
+						<div class="box-row">
+							<div class="box">Event Id</div>
+							<div class="box">Product Type </div>
+							<div class="box">Report Date</div>
+							<div class="box">CodeInfo</div>
+						</div>
+					<% $enfEvents.each_with_index do |result, index| %>
+						<div class="box-row1">
+							<div class="box"><%= result["event_id"] %></div>
+							<div class="box"><%= result["product_type"] %></div>
+							<div class="box"><%= result["report_date"] %></div>
+							<div class="box"><%= result["code_info"][0...10] %></div>
+						</div>
+					<% end %>
+					</div>
+
+					<a href="" class="button">Read More</a><br>
+					<%= line_chart "/enforcements/devicereport?type=enf", discrete: true %>
+					<h3>Aliquam nibh quam iaculis tempis</h3>
+				</div>
+
+
+			</div> <!-- .row -->
+
+		</div> <!-- .container -->
+	</div> <!-- .fullwidth-block -->
+</main> <!-- .content -->

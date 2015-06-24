@@ -1,6 +1,12 @@
 require "rest-client"
 $rubyObj
+$advEvents
+$enfEvents
 class EnforcementsController < ApplicationController
+  def index
+    $advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?limit=5")['results']
+    $enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?limit=5")['results']
+  end
   def retrieve
     @from = params[:From]
     @to = params[:To]
@@ -11,7 +17,7 @@ class EnforcementsController < ApplicationController
     $rubyObj = JSON.parse(@restresponse)
     #puts @restresponse
   end
-  def index
+  def index1
     @from = '20130101'
     @to = '20131231'
     @limit = '3'
@@ -26,7 +32,32 @@ class EnforcementsController < ApplicationController
     @eventId = params[:eventId]
     @eventObj = $rubyObj['results'][@eventId.to_i]
   end
-  def report
+  def devicereport
+    type = params[:type]
+    if type == "device"
+	url = "https://api.fda.gov/device/event.json?count=date_received"
+    elsif type == "enf"
+	url = "https://api.fda.gov/device/enforcement.json?count=report_date"
+    end
+    all = JSON.parse(RestClient.get url)['results']
+    result = "{"
+    all.group_by{ |h| h['time'][0..3] }.each do |loc,events|
+      puts "'#{loc}': "
+      print "--> "
+      #puts events.map{ |e| e['count']}.join(', ')
+      count = 0
+      events.map{ |e| e['count']}.each do |cnt|
+         count += cnt.to_i
+      end
+      puts "for " + loc + " count is : " + count.to_s
+      result += "\"#{loc}\": #{count},"
+    end
+    result = result[0...-1]
+    result += "}"
+    puts result
+    render json: JSON.parse(result)
+  end
+  def report1
     chartData = RestClient.get "https://api.fda.gov/device/event.json?search=date_received:[20140101+TO+20140115]+AND+device.generic_name:x-ray&count=date_received"
     chartData = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=date_received:[20140101+TO+20141115]+AND+device.generic_name:x-ray&count=date_received")['results']
     data1 = '{

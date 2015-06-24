@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post "enforcements/retrieve" 	=> "enforcements#retrieve"
   get "enforcements/display" 	=> "enforcements#display"
   get "enforcements/report" 	=> "enforcements#report"
+  get "enforcements/devicereport" 	=> "enforcements#devicereport"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
