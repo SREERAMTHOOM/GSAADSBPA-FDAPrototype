@@ -56,8 +56,6 @@
 		<div class="container">
 			
 			
-			<nav class="member-navigation pull-right"><a href="#"><em class="fa fa-user"></em> Your Location <strong>Vinna VA 22180</strong>&nbsp;&nbsp; </a>
-			<input type="text" placeholder="Change Location"></nav> 
 			<!-- .member-navigation -->
 		</div> <!-- .container -->
 	</div> <!-- .top-header -->
@@ -65,7 +63,7 @@
 	<div class="bottom-header">
 		<div class="container">
 			<a href="index.html" class="branding pull-left">
-				<img src="images/logo-icon.png" alt="Site title" class="logo-icon">
+				<img src="/assets/logo-icon.png" alt="Site title" class="logo-icon">
 				<h1 class="site-title">Company <span>Name</span></h1> 
 				<h2 class="site-description">Tagline goes here</h2>
 			</a> <!-- #branding -->
@@ -73,10 +71,10 @@
 			<nav class="main-navigation pull-right">
 				<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
 				<ul class="menu">
-					<li class="menu-item"><a href="index.html">Home</a></li>
-					<li class="menu-item"><a href="about-us.html">Story1</a></li>
-					<li class="menu-item"><a href="services.html">Story2</a></li>
-					<li class="menu-item"><a href="contact.html">Story3</a></li>
+					<li class="menu-item"><%= link_to "Home", "/" %></li>
+					<li class="menu-item"><%= link_to "Adverse events", "/enforcements/advevents" %></li>
+					<li class="menu-item"><%= link_to "Enforcement reports", "/enforcements/enfreports" %></li>
+					<li class="menu-item"><%= link_to "Medical Devices", "/enforcements/devices" %></li>
 				</ul>
 			</nav> <!-- .main-navigation -->
 		</div> <!-- .container -->
@@ -92,31 +90,19 @@
 			<div class="col-md-6">
 				
 				<div class=" branding">
-					<img src="images/logo-footer.png" alt="Site title" class="logo-icon">
+					<img src="/assets/logo-footer.png" alt="Site title" class="logo-icon">
 					<h1 class="site-title"><a href="#">Company <span>Name</span></a></h1> 
 					<h2 class="site-description">Tagline goes here</h2>
 				</div> <!-- .branding -->
 
-				<p class="copy">Copyright 2015 Ace Info Solutions, Inc. All rights reserved</p>
+				<p class="copy">For GSA Agile Delivery Services BPA-FDA prototype</p>
 			</div>
 			
-			<div class="col-md-6 align-right">
 			
-				<nav class="footer-navigation">
-					<a href="#">Home</a>
-					<a href="#">Story1</a>
-					<a href="#">Story1</a>
-					<a href="#">Story2</a>
-				</nav> <!-- .footer-navigation -->
-			
-				
-			
-			</div>
 		</div>
 
 	</div>
 </footer> <!-- .site-footer -->
-
 </div> <!-- #site-content -->
 </html>
 

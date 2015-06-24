@@ -7,19 +7,7 @@
 /*=========================================== 
  * Importing CSS Libraries
  *===========================================*/
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-nav,
-section,
-summary {
-  display: block;
-}
+
 
 audio,
 canvas,
@@ -467,7 +455,7 @@ table {
   content: " ";
   width: 260px;
   height: 67px;
-  background: url(images/connector.png) no-repeat;
+  background: url(connector.png) no-repeat;
   position: absolute;
   top: -75px;
   left: 55%;
@@ -2574,7 +2562,7 @@ hr.spacer {
   content: " ";
   width: 21px;
   height: 22px;
-  background: url(images/quote.png) no-repeat;
+  background: url(quote.png) no-repeat;
   position: absolute;
   top: 10px;
   left: 0;
