@@ -1,6 +1,8 @@
 <h1>Enforcements !</h1>
 
-<%= line_chart "/enforcements/report", discrete: true %>
+<div id="myChart" style="height: 300px; text-align: center; color: #999; line-height: 300px; font-size: 14px; font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, Arial, Helvetica, sans-serif;">Loading...</div><script type="text/javascript">
+	loadChartData('https://api.fda.gov/device/event.json?count=date_received', "myChart");
+</script>
 
 <%= form_tag '/enforcements/retrieve' do %>
     <%=label_tag 'From' %>

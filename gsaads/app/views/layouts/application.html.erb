@@ -8,9 +8,36 @@
   <![endif]-->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick"%>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+	function loadChartData(url, chartName){
+		$.get(url, function(data, status){
+			var categories = new Array();
+			var groupedObjects = new Array();
+			var i = 0;
+
+			myobj = {};
+			_.each(data.results,function(obj){
+				var existingObj;
+				var year = obj.time.substring(0, 4);
+				if($.inArray(obj.time.substring(0, 4),categories) >= 0) {
+					existingObj = _.find(data.results,function(o){return o.time.substring(0, 4) === obj.time.substring(0, 4); });
+					existingObj.count += obj.count;
+				} else {
+					groupedObjects[i] = obj;
+					categories[i] = obj.time.substring(0, 4);
+					i++;
+				}
+			});
+			_.each(groupedObjects, function(key, value) {
+				myobj[key.time.substring(0, 4)] = key.count;
+			});
+			new Chartkick.LineChart(chartName, myobj, {"discrete":true});
+		});
+	}
+  </script>
   <% if content_for? :for_head %>
     <%= yield :for_head %>
   <% end %>
