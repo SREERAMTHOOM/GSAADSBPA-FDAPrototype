@@ -111,12 +111,26 @@ $(function() {
 							  <option>2003</option>
 							</optgroup>
 						  </select>
-						  <a href="" class="button">Device Type</a><br>
-
+							<select class="selectpicker" id="first-disabled"  data-hide-disabled="true" data-live-search="true">
+								<optgroup label="1990-">
+									<option>Device Type</option>
+									<option>1990</option>
+									<option>1991</option>
+									<option>1992</option>
+									<option>1993</option>
+									<option>1994</option>
+								</optgroup>
+								<optgroup label="2000-">
+									<option>2000</option>
+									<option>2001</option>
+									<option>2002</option>
+									<option>2003</option>
+								</optgroup>
+							</select>
+							<br>
 						   <br>
 							
-							<img src="/assets/chart4.jpg" width=" 700px" >
-					
+							<%= column_chart @tempData, stacked: true %>
 				</div>
 
 		

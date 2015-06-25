@@ -1,28 +1,31 @@
-<main class="content">
-	<div class="slider">
-		<ul class="slides">
-			<li>
-				<div class="container">                     
-					<div class="slide-caption">
+			<main class="content">
+				<div class="slider">
+					<ul class="slides">
+						<li>
+							<div class="container">                     
+								<div class="slide-caption">
+									
 						<small class="slide-subtitle">Adverse Events & Enforcement Reports for Medical Devices</small>
-						<div class="slide-summary">
-						</div>
-					</div>
-				</div>
-			</li>
-		</ul> <!-- .slides -->
-	</div> <!-- .slider -->
 
-	
-	<div class="fullwidth-block about-section">
+									<div class="slide-summary">
+										
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul> <!-- .slides -->
+				</div> <!-- .slider -->
 
-		<div class="container">
+				
+				<div class="fullwidth-block about-section">
 
-			<div class="row">
+					<div class="container">
 
-				<div class="col-md-6 wow fadeInUp">
+						<div class="row">
+
+							<div class="col-md-6 wow fadeInUp">
 					<h2>Latest Adverse Events</h2>
-					
+								
 					<div class="boxer">
 						<div class="box-row">
 							<div class="box">Date</div>
@@ -40,14 +43,11 @@
 					<% end %>
 					</div>
 
-					<%= link_to "Read More", "/enforcements/details" %><br>
-					<%= line_chart "/enforcements/devicereport?type=device", discrete: true %>
-					<h3>Graph showing Total Adverse Events Reported So Far Ordered by Years</h3>
 				</div>
 
-				<div class="col-md-6 wow fadeInUp">
-					<h2>Latest Enforcement Reports</h2>
-					
+							<div class="col-md-6 wow fadeInUp">
+								<h2>Latest Enforcement Reports</h2>
+
 					<div class="boxer">
 						<div class="box-row">
 							<div class="box">Date</div>
@@ -63,14 +63,13 @@
 					<% end %>
 					</div>
 
-					<%= link_to "Read More", "/enforcements/details" %><br>
-					<%= line_chart "/enforcements/devicereport?type=enf", discrete: true %>
-					<h3>Graph showing Total Enforcement Reports Reported So Far Ordered by Years</h3>
-				</div>
+                                    </div>
+
+                                
 
 
-			</div> <!-- .row -->
+						</div> <!-- .row -->
 
-		</div> <!-- .container -->
-	</div> <!-- .fullwidth-block -->
-</main> <!-- .content -->
+					</div> <!-- .container -->
+				</div> <!-- .fullwidth-block -->
+			</main> <!-- .content -->

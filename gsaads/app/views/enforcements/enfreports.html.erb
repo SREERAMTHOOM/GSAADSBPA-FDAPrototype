@@ -5,7 +5,7 @@
 				<div class="container">                     
 					<div class="slide-caption">
 						
-						<small class="slide-subtitle">Adverse Events & Enforcement Reports for Medical Devices</small>
+						<small class="slide-subtitle">Highest Number of Enforcement Reports by Manufacturer for the Year 2015</small>
 
 						<div class="slide-summary">
 							
@@ -24,86 +24,27 @@
 			<div class="row">
 
 				<div class="col-md-6 wow fadeInUp">
-				  <h2>Highest Enforcement Reports for the year 2015</h2>
-				  <div class="boxer">
+				  <h2>Highest Number of Enforcement Reports by Manufacturer for the Year 2015</h2>
+					<div class="boxer">
 						<div class="box-row">
 							<div class="box">Manufacturers </div>
 							<div class="box">Location of Event </div>
 							<div class="box">Total</div>
-							
 						</div>
+					<% @enfEvents.each_with_index do |result, index| %>
 						<div class="box-row1">
-							<div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-							
+							<div class="box"><%= result["recall_initiation_date"] %></div>
+							<div class="box"><%= result["recalling_firm"] %></div>
+							<div class="box"><%= result["code_info"][0...10] %></div>
 						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							<div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						
-						 <div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						
-						 <div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
-						<div class="box-row1">
-							 <div class="box"><a href="#">Lorem ipsum</a></div>
-							<div class="box">Mclean VA</div>
-							<div class="box">234000</div>
-						</div>
+					<% end %>
 					</div>
-
-				   
 				</div>
 
 				<div class="col-md-6 wow fadeInUp">
 					<h2>Manufacturers Name</h2>
 					
-					<img src="/assets/chart2.jpg" width="90%">
+					<%= pie_chart "/enforcements/devicereport?type=device", discrete: true %>
 
 				</div>
 

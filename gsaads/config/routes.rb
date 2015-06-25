@@ -8,12 +8,15 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'enforcements#index'
   post "enforcements/retrieve" 	=> "enforcements#retrieve"
-  get "enforcements/display" 	=> "enforcements#display"
-  get "enforcements/report" 	=> "enforcements#report"
-  get "enforcements/devicereport" 	=> "enforcements#devicereport"
-  get "enforcements/advevents" 	=> "enforcements#advevents"
-  get "enforcements/enfreports" 	=> "enforcements#enfreports"
-  get "enforcements/devices" 	=> "enforcements#devices"
+
+  controller :enforcements do 
+	  get "enforcements/display" 	=> :display
+	  get "enforcements/devicereport" 	=> :devicereport
+	  get "enforcements/advevents" 	=> :advevents
+	  get "enforcements/enfreports" 	=> :enfreports
+	  get "enforcements/devices" 	=> :devices
+	  get "enforcements/details" 	=> :details
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

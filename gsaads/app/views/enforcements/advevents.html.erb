@@ -92,24 +92,36 @@ $(function() {
 							</optgroup>
 						  </select>
 
-							<div id="dd" class="wrapper-dropdown-3" tabindex="1">
-								<span>Manufacturers</span>
-								<ul class="dropdown">
-									<li><a href="#"><i class="icon-envelope icon-large"></i>CManufacturers1</a></li>
-									<li><a href="#"><i class="icon-truck icon-large"></i>Manufacturers2</a></li>
-									<li><a href="#"><i class="icon-plane icon-large"></i>Manufacturers3</a></li>
-								</ul>
-							</div>
+						<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
+							<optgroup disabled="disabled" label="disabled">
+								<option>Hidden</option>
+							</optgroup>
+							<optgroup label="1990-">
+								<option>Manufacturers</option>
+								<option>1990</option>
+								<option>1991</option>
+								<option>1992</option>
+								<option>1993</option>
+								<option>1994</option>
+							</optgroup>
+							<optgroup label="2000-">
+								<option>2000</option>
+								<option>2001</option>
+								<option>2002</option>
+								<option>2003</option>
+							</optgroup>
+						</select>
 
-							<h3>Device types : Seleted Manufacturer name goes here<br> 2015</h3>
+
+						<h3>Device Types<br> 2015</h3>
 					   
-							<img src="/assets/chart2.jpg" width="90%">
+							<%= pie_chart "/enforcements/devicereport?type=device", discrete: true %>
 					
 				</div>
 
 				<div class="col-md-6 wow fadeInUp">
 					
-					<img src="/assets/chart3.jpg" width="80%">
+					<%= pie_chart "/enforcements/devicereport?type=enf", discrete: true %>
 					<p>*This chart will show up after user click the Device types from the left pie chart*</p>
 				</div>
 
