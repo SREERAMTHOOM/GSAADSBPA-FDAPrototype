@@ -1,75 +1,40 @@
-			<main class="content">
-				<div class="slider">
-					<ul class="slides">
-						<li>
-							<div class="container">                     
-								<div class="slide-caption">
-									
-						<small class="slide-subtitle">Adverse Events & Enforcement Reports for Medical Devices</small>
-
-									<div class="slide-summary">
-										
-									</div>
-								</div>
-							</div>
-						</li>
-					</ul> <!-- .slides -->
-				</div> <!-- .slider -->
-
-				
-				<div class="fullwidth-block about-section">
-
-					<div class="container">
-
-						<div class="row">
-
-							<div class="col-md-6 wow fadeInUp">
-					<h2>Latest Adverse Events</h2>
-								
-					<div class="boxer">
-						<div class="box-row">
-							<div class="box">Date</div>
-							<div class="box">Location</div>
-							<div class="box">Device</div>
-							<div class="box">Event</div>
-						</div>
-					<% @advEvents.each_with_index do |result, index| %>
-						<div class="box-row1">
-							<div class="box"><%= result["date_of_event"] %></div>
-							<div class="box"><%= result["event_location"] %></div>
-							<div class="box"><%= result["device"][0]["model_number"] %></div>
-							<div class="box"><%= result["event_type"] %></div>
-						</div>
-					<% end %>
-					</div>
-
+<div class="row">
+	<div class="col-md-6 img-portfolio">
+		<div class="contentsbox">
+			<h2>Latest Adverse Event</h2>
+			<div class="boxer">
+				<div class="box-row">
+					<div class="box">Date</div>
+					<div class="box">Location</div>
+					<div class="box">Device</div>
+					<div class="box">Event</div>
 				</div>
-
-							<div class="col-md-6 wow fadeInUp">
-								<h2>Latest Enforcement Reports</h2>
-
-					<div class="boxer">
-						<div class="box-row">
-							<div class="box">Date</div>
-							<div class="box">Manufacturers</div>
-							<div class="box">Device Type</div>
-						</div>
-					<% @enfEvents.each_with_index do |result, index| %>
-						<div class="box-row1">
-							<div class="box"><%= result["recall_initiation_date"] %></div>
-							<div class="box"><%= result["recalling_firm"] %></div>
-							<div class="box"><%= result["code_info"][0...10] %></div>
-						</div>
-					<% end %>
-					</div>
-
-                                    </div>
-
-                                
-
-
-						</div> <!-- .row -->
-
-					</div> <!-- .container -->
-				</div> <!-- .fullwidth-block -->
-			</main> <!-- .content -->
+			<% @advEvents.each_with_index do |result, index| %>
+				<div class="box-row1">
+					<div class="box"><%= result["date_of_event"] %></div>
+					<div class="box"><%= result["event_location"] %></div>
+					<div class="box"><%= result["device"][0]["model_number"] %></div>
+					<div class="box"><%= result["event_type"] %></div>
+				</div>
+			<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 img-portfolio">
+		<h2>Latest Enforcement Reports</h2>
+		<div class="boxer">
+			<div class="box-row">
+				<div class="box">Date</div>
+				<div class="box">Manufacturers</div>
+				<div class="box">Device Type</div>
+			</div>
+		<% @enfEvents.each_with_index do |result, index| %>
+			<div class="box-row1">
+				<div class="box"><%= result["recall_initiation_date"] %></div>
+				<div class="box"><%= result["recalling_firm"] %></div>
+				<div class="box"><%= result["code_info"][0...10] %></div>
+			</div>
+		<% end %>
+		</div>
+	</div>
+</div> <!-- .row -->

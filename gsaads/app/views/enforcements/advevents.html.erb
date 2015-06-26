@@ -44,90 +44,71 @@ $(function() {
 </script>
 <% end %>
 
-<main class="content">
-	<div class="slider">
-		<ul class="slides">
-			<li>
-				<div class="container">                     
-					<div class="slide-caption">
-						
-						<small class="slide-subtitle">Adverse Events & Enforcement Reports for Medical Devices</small>
+<div class="row">
 
-						<div class="slide-summary">
-							
+	<div class="col-lg-12">
+		<h2>Adverse Event Reports by Manufacturers</h2>
+		  
+			  <select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
+				<optgroup disabled="disabled" label="disabled">
+				  <option>Hidden</option>
+				</optgroup>
+				<optgroup label="1990-">
+				  <option>Select Year</option>
+				  <option>1990</option>
+				  <option>1991</option>
+				  <option>1992</option>
+				  <option>1993</option>
+				  <option>1994</option>
+				</optgroup>
+				<optgroup label="2000-">
+				  <option>2000</option>
+				  <option>2001</option>
+				  <option>2002</option>
+				  <option>2003</option>
+				</optgroup>
+			  </select>
+
+			<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
+				<optgroup disabled="disabled" label="disabled">
+					<option>Hidden</option>
+				</optgroup>
+				<optgroup label="1990-">
+					<option>Manufacturers</option>
+					<option>1990</option>
+					<option>1991</option>
+					<option>1992</option>
+					<option>1993</option>
+					<option>1994</option>
+				</optgroup>
+				<optgroup label="2000-">
+					<option>2000</option>
+					<option>2001</option>
+					<option>2002</option>
+					<option>2003</option>
+				</optgroup>
+			</select>
+            </div>
+
+        <div class="row">
+            <div class="col-md-6 img-portfolio">
+            	<div class="contentsbox">
+                  <h3>Device Types</h3>
+		   
+				<%= pie_chart "/enforcements/devicereport?type=device", discrete: true %>
+		
+	</div>
+            </div>
+            <div class="col-md-6 img-portfolio">
+            	<div class="contentsbox">
+            		 <h3>Seriousness of Adverse Event caused by Device Name</h3>
+		
+		<%= pie_chart "/enforcements/devicereport?type=enf", discrete: true %>
+		
 						</div>
-					</div>
-				</div>
-			</li>
-		</ul> <!-- .slides -->
-	</div> <!-- .slider -->
+            </div>
 
-	
-	<div class="fullwidth-block about-section">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-6 wow fadeInUp">
-					<h2>Adverse Event Reports by Manufacturers</h2>
-					  
-						  <select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
-							<optgroup disabled="disabled" label="disabled">
-							  <option>Hidden</option>
-							</optgroup>
-							<optgroup label="1990-">
-							  <option>Select Year</option>
-							  <option>1990</option>
-							  <option>1991</option>
-							  <option>1992</option>
-							  <option>1993</option>
-							  <option>1994</option>
-							</optgroup>
-							<optgroup label="2000-">
-							  <option>2000</option>
-							  <option>2001</option>
-							  <option>2002</option>
-							  <option>2003</option>
-							</optgroup>
-						  </select>
-
-						<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
-							<optgroup disabled="disabled" label="disabled">
-								<option>Hidden</option>
-							</optgroup>
-							<optgroup label="1990-">
-								<option>Manufacturers</option>
-								<option>1990</option>
-								<option>1991</option>
-								<option>1992</option>
-								<option>1993</option>
-								<option>1994</option>
-							</optgroup>
-							<optgroup label="2000-">
-								<option>2000</option>
-								<option>2001</option>
-								<option>2002</option>
-								<option>2003</option>
-							</optgroup>
-						</select>
+	</div>
 
 
-						<h3>Device Types<br> 2015</h3>
-					   
-							<%= pie_chart "/enforcements/devicereport?type=device", discrete: true %>
-					
-				</div>
-
-				<div class="col-md-6 wow fadeInUp">
-					
-					<%= pie_chart "/enforcements/devicereport?type=enf", discrete: true %>
-					<p>*This chart will show up after user click the Device types from the left pie chart*</p>
-				</div>
-
-
-			</div> <!-- .row -->
-
-		</div> <!-- .container -->
-	</div> <!-- .fullwidth-block -->
-</main> <!-- .content -->
+</div> <!-- .row -->

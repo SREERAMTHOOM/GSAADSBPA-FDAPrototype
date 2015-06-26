@@ -6,8 +6,10 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
   <![endif]-->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'style' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
   <script>
@@ -43,68 +45,114 @@
 			}
 		});
 	}
+
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+
   </script>
   <% if content_for? :for_head %>
     <%= yield :for_head %>
   <% end %>
 </head>
 <body>
-<div id="site-content">
-		
-<header class="site-header">
-	<div class="top-header">
-		<div class="container">
-			<nav class="member-navigation pull-right"><a href="#"><em class="fa fa-user"></em> HELP!</a> </nav>			
-			<!-- .member-navigation -->
-		</div> <!-- .container -->
-	</div> <!-- .top-header -->
 
-	<div class="bottom-header">
-		<div class="container">
-			<a href="/" class="branding pull-left">
-				<img src="/assets/logo-icon.png" alt="Site title" class="logo-icon">
-				<h1 class="site-title">Company <span>Name</span></h1> 
-				<h2 class="site-description">Tagline goes here</h2>
-			</a> <!-- #branding -->
-			
-			<nav class="main-navigation pull-right">
-				<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-				<ul class="menu">
-					<li class="menu-item"><%= link_to "Home", "/" %></li>
-					<li class="menu-item"><%= link_to "Adverse events", "/enforcements/advevents" %></li>
-					<li class="menu-item"><%= link_to "Enforcement reports", "/enforcements/enfreports" %></li>
-					<li class="menu-item"><%= link_to "Medical Devices", "/enforcements/devices" %></li>
-				</ul>
-			</nav> <!-- .main-navigation -->
-		</div> <!-- .container -->
-	</div> <!-- .bottom-header -->
-</header> <!-- .site-header -->
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img src="/assets/logo.png" class="logo"><a class="navbar-brand" href="/">Adverse Events & Enforcement<br> Reports for Medical Devices</a>
+                </div>
+     <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <%= link_to "Home", "/" %>
+                    </li>
+                    <li>
+                        <%= link_to "Adverse events", "/enforcements/advevents" %>
+                    </li>
+                    <li>
+                        <%= link_to "Enforcement reports", "/enforcements/enfreports" %>
+                    </li>
+                    <li>
+                    	<%= link_to "Medical Devices", "/enforcements/devices" %>
+                    </li>
+                    <li >
+                    	<%= link_to "HELP", "/" %>
+                    </li>
+              </ul>
+                    </li>       
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header Carousel -->
+    <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="fill" style="background-image:url('/assets/main.jpg');"></div>
+                <div class="carousel-caption">
+                    <h2>Adverse Events & Enforcement Reports for Medical Devices</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 2</h2>
+                </div>
+            </div>
+            <div class="item">
+                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="carousel-caption">
+                    <h2>Caption 3</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
 
 <%= yield %>
 
-<footer class="site-footer wow fadeInUp">
-	<div class="container">
-
-		<div class="row">
-			<div class="col-md-6">
-				
-				<div class=" branding">
-					<img src="/assets/logo-footer.png" alt="Site title" class="logo-icon">
-					<h1 class="site-title"><a href="#">Company <span>Name</span></a></h1> 
-					<h2 class="site-description">Tagline goes here</h2>
-				</div> <!-- .branding -->
-
-				<p class="copy">For GSA Agile Delivery Services BPA-FDA prototype</p>
-			</div>
-			
-			
+		<!-- Footer -->
+    <footer>
+    	<div class="navbar-footer site-footer">
+       			<div class="col-lg-12">
+                        <p>For GSA Agile Delivery Services BPA-FDA prototype</p>
+                </div>
 		</div>
+       </footer>
+       
+    </div>
+    <!-- /.container -->
 
-	</div>
-</footer> <!-- .site-footer -->
-</div> <!-- #site-content -->
+</body>
+
 </html>
-
-
-
-

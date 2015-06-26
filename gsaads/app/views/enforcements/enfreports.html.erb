@@ -1,56 +1,31 @@
-<main class="content">
-	<div class="slider">
-		<ul class="slides">
-			<li>
-				<div class="container">                     
-					<div class="slide-caption">
-						
-						<small class="slide-subtitle">Highest Number of Enforcement Reports by Manufacturer for the Year 2015</small>
-
-						<div class="slide-summary">
-							
-						</div>
+<div class="row">
+	<div class="col-lg-12">
+	   <h2>Highest Number of Enforcement Reports<br> by Manufacturer for the Year 2015</h2>
+	</div>
+	<div class="row">
+		<div class="col-md-6 img-portfolio">
+			<div class="contentsbox">
+				<div class="boxer">
+					<div class="box-row">
+						<div class="box">Manufacturers </div>
+						<div class="box">Location of Event </div>
+						<div class="box">Total</div>
 					</div>
-				</div>
-			</li>
-		</ul> <!-- .slides -->
-	</div> <!-- .slider -->
-
-	
-	<div class="fullwidth-block about-section">
-
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-md-6 wow fadeInUp">
-				  <h2>Highest Number of Enforcement Reports by Manufacturer for the Year 2015</h2>
-					<div class="boxer">
-						<div class="box-row">
-							<div class="box">Manufacturers </div>
-							<div class="box">Location of Event </div>
-							<div class="box">Total</div>
-						</div>
-					<% @enfEvents.each_with_index do |result, index| %>
-						<div class="box-row1">
-							<div class="box"><%= result["recall_initiation_date"] %></div>
-							<div class="box"><%= result["recalling_firm"] %></div>
-							<div class="box"><%= result["code_info"][0...10] %></div>
-						</div>
-					<% end %>
+				<% @enfEvents.each_with_index do |result, index| %>
+					<div class="box-row1">
+						<div class="box"><%= result["recall_initiation_date"] %></div>
+						<div class="box"><%= result["recalling_firm"] %></div>
+						<div class="box"><%= result["code_info"][0...10] %></div>
 					</div>
+				<% end %>
 				</div>
-
-				<div class="col-md-6 wow fadeInUp">
-					<h2>Manufacturers Name</h2>
-					
-					<%= pie_chart "/enforcements/devicereport?type=device", discrete: true %>
-
-				</div>
-
-
-			</div> <!-- .row -->
-
-		</div> <!-- .container -->
-	</div> <!-- .fullwidth-block -->
-</main> <!-- .content -->
+			</div>
+		</div>
+		<div class="col-md-6 img-portfolio">
+			<div class="contentsbox">
+				<h3>Manufacturers Name</h3>
+				<%= pie_chart "/enforcements/devicereport?type=device", discrete: true %>
+			</div>
+		</div>
+	</div>
+</div> <!-- .row -->
