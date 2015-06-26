@@ -2,7 +2,7 @@ require "rest-client"
 
 class EnforcementsController < ApplicationController
   def index
-    @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?limit=5")['results']
+    @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:date_of_event&limit=5")['results']
     @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?limit=5")['results']
   end
   def devicereport
