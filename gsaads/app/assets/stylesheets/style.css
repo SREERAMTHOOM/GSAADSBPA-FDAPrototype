@@ -58,7 +58,8 @@ h1 {
 h2 {
   font-size: 1.5em;
   margin: 0.83em 0;
-  color: #01a6d4;
+  color: #007efc;
+  font-weight: bold;
 }
 
 h3 {
@@ -67,7 +68,7 @@ h3 {
 }
 
 h4 {
-  font-size: 1em;
+  font-size: 1.5em;
   margin: 1.33em 0;
 }
 
@@ -317,7 +318,7 @@ table {
 
 .slider {
   position: relative;
-  background-image:url(dummy/main.jpg); background-repeat:no-repeat;
+  background-image:url(/assets/main.jpg); background-repeat:no-repeat;
 }
 .slider .slides {
   list-style: none;
@@ -632,13 +633,7 @@ form textarea {
   resize: vertical;
 }
 
-@font-face {
-  font-family: 'icomoon';
-  src: url("fonts/icomoon.eot?-cop1gd");
-  src: url("fonts/icomoon.eot?#iefix-cop1gd") format("embedded-opentype"), url("fonts/icomoon.woff?-cop1gd") format("woff"), url("fonts/icomoon.ttf?-cop1gd") format("truetype"), url("fonts/icomoon.svg?-cop1gd#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
 [class^="icon-"], [class*=" icon-"] {
   font-family: 'icomoon';
   speak: none;
@@ -958,7 +953,7 @@ form textarea {
   overflow: hidden;
   height: 0;
 }
-.container_bg { background-image:url(dummy/main.jpg); background-repeat:no-repeat;
+.container_bg { background-image:url(/assets/main.jpg); background-repeat:no-repeat;
 	}
 @media (min-width: 768px) {
   .container {
@@ -2093,9 +2088,9 @@ form textarea {
 }
 body {
   position: relative;
-  font-family: "Roboto Slab", serif;
-  font-size: 16px;
-  font-weight: 300;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+  font-size: 1.2EM;
+  font-weight: 100;
   line-height: 30px;
   color: #7d808c;
 }
@@ -2306,23 +2301,32 @@ body {
    display: table;
    border-collapse: collapse;
    margin-bottom: 25px;
-   font-size: 0.9em;
+   font-size: 1em;
+   
    
 }
- 
-.boxer .box-row {
+
+tr.boxer .box-row {
    display: table-row;
    font-weight:bold;
   
 }
 
-.boxer .box-row1 {
+tr.boxer .box-row1 {
    display: table-row;
   
 } 
 .boxer .box {
    display: table-cell;
-   width: 5%;
+   width: 30%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+}
+
+.boxer .box2 {
+   display: table-cell;
+   width: 40%;
    text-align: left;
    vertical-align: top;
    border: 0px;
@@ -2423,10 +2427,12 @@ hr.spacer {
   padding: 20px;
 }
 
-.site-footer {
-  background-color: #292c35;
-  padding: 60px 0;
-  color: #aaacb5;
+.footer {
+  background-color: #7c7c7c;
+  height: 150px;
+  padding-top: 30px;
+  color: #ffffff;
+  width:100%;
 }
 .site-footer .copy {
   font-size: 12px;
@@ -2602,3 +2608,4 @@ hr.spacer {
   font-weight: 500;
   font-style: normal;
 }
+

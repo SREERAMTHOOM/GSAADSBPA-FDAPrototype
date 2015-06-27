@@ -1,24 +1,26 @@
 <div class="row">
 	<div class="col-lg-12">
-	   <h2>Highest Number of Enforcement Reports<br> by Manufacturer for the Year 2015</h2>
+	   <h2>Highest Number of Enforcement Reports by Manufacturer for the Year 2015</h2>
 	</div>
 	<div class="row">
 		<div class="col-md-6 img-portfolio">
 			<div class="contentsbox">
-				<div class="boxer">
-					<div class="box-row">
-						<div class="box">Manufacturers </div>
-						<div class="box">Location of Event </div>
-						<div class="box">Total</div>
-					</div>
-				<% @enfEvents.each_with_index do |result, index| %>
-					<div class="box-row1">
-						<div class="box"><%= result["recall_initiation_date"] %></div>
-						<div class="box"><%= result["recalling_firm"] %></div>
-						<div class="box"><%= result["code_info"][0...10] %></div>
-					</div>
-				<% end %>
-				</div>
+				<table class="boxer">
+					<thead  class="box-row">
+						<tr>
+							<th class="box2">Manufacturers</th>
+							<th class="box2">Tota</th>
+						</tr>
+					</thead>
+					<tbody class="box-row1">
+					<% @enfEvents.each_with_index do |result, index| %>
+						<tr>
+							<td class="box"><%= result["term"] %></td>
+							<td class="box"><%= result["count"] %></td>
+						</tr>
+					<% end %>
+					</tbody>
+				</table>
 			</div>
 		</div>
 		<div class="col-md-6 img-portfolio">

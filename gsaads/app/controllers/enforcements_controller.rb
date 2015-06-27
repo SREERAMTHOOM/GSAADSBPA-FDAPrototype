@@ -141,7 +141,7 @@ class EnforcementsController < ApplicationController
     @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?limit=20")['results']
   end
   def enfreports
-    @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=report_date:[20150101+TO+20151231]&limit=25")['results']
+    @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=report_date:[20150101+TO+20151231]&limit=25&count=recalling_firm.exact")['results']
   end
   def advevents
 	  @startYear = params[:startYear]

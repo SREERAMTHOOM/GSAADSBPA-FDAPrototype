@@ -1041,9 +1041,10 @@ button, input, select, textarea {
 	line-height: inherit
 }
 a {
-	color: #337ab7;
+	color: #ffffff;
 	text-decoration: none
 }
+
 a:focus, a:hover {
 	color: #23527c;
 	text-decoration: underline
@@ -3860,12 +3861,12 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	color: #ccc
 }
 .navbar-inverse {
-	background-color: #222;
-	border-color: #080808
+	background-color: #007efc;
+	border-color: #007efc
 }
 .navbar-inverse .navbar-brand {
-	color: #9d9d9d;
-	font-size: 0.8em;
+	color: #ffffff;
+	font-size: 1em;
 }
 .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover {
 	color: #fff;
@@ -3890,7 +3891,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	background-color: transparent
 }
 .navbar-inverse .navbar-toggle {
-	border-color: #333;
+	border-color: #ffffff;
 	padding-top:10px;
 }
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
@@ -4714,12 +4715,12 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 	border-bottom: 1px solid #ddd
 }
 .panel-default {
-	border-color: #ddd
+	border-color: #ffffff
 }
 .panel-default>.panel-heading {
 	color: #333;
 	background-color: #f5f5f5;
-	border-color: #ddd
+	border-color: #ffffff
 }
 .panel-default>.panel-heading+.panel-collapse>.panel-body {
 	border-top-color: #ddd
@@ -5412,9 +5413,8 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', end
 	z-index: 10;
 	padding-top: 20px;
 	padding-bottom: 20px;
-	color: #fff;
+	color: #0d5788;
 	text-align: center;
-	text-shadow: 0 1px 2px rgba(0,0,0,.6)
 }
 .carousel-caption .btn {
 	text-shadow: none
@@ -5505,6 +5505,7 @@ tr.visible-xs {
 td.visible-xs, th.visible-xs {
 	display: table-cell!important
 }
+
 }
 
 @media (max-width:767px) {
