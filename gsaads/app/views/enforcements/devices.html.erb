@@ -47,63 +47,17 @@ $(function() {
 <div class="row">
 	<div class="col-md-6 img-portfolio">
 		<h2>Adverse Event and Enforcement reports by Device type and Year</h2>
-
-		<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
-			<optgroup disabled="disabled" label="disabled">
-				<option>Hidden</option>
-			</optgroup>
-			<optgroup label="1990-">
-				<option>Select Year</option>
-				<option>1990</option>
-				<option>1991</option>
-				<option>1992</option>
-				<option>1993</option>
-				<option>1994</option>
-			</optgroup>
-			<optgroup label="2000-">
-				<option>2000</option>
-				<option>2001</option>
-				<option>2002</option>
-				<option>2003</option>
-			</optgroup>
-		</select>
-
-		<select id="first-disabled" class="selectpicker" data-hide-disabled="true" data-live-search="true">
-			<optgroup disabled="disabled" label="disabled">
-				<option>Hidden</option>
-			</optgroup>
-			<optgroup label="1990-">
-				<option>Select Year</option>
-				<option>1990</option>
-				<option>1991</option>
-				<option>1992</option>
-				<option>1993</option>
-				<option>1994</option>
-			</optgroup>
-			<optgroup label="2000-">
-				<option>2000</option>
-				<option>2001</option>
-				<option>2002</option>
-				<option>2003</option>
-			</optgroup>
-		</select>
-
-		<select class="selectpicker" id="first-disabled"  data-hide-disabled="true" data-live-search="true">
-			<optgroup label="1990-">
-				<option>Device Type</option>
-				<option>1990</option>
-				<option>1991</option>
-				<option>1992</option>
-				<option>1993</option>
-				<option>1994</option>
-			</optgroup>
-			<optgroup label="2000-">
-				<option>2000</option>
-				<option>2001</option>
-				<option>2002</option>
-				<option>2003</option>
-			</optgroup>
-		</select>
+		<form role="form" class="form-inline">
+			<div class="form-group">
+				<%= select_tag "startYear", options_for_select($yearList, :selected=>params[:startYear]), {:onchange => "this.form.submit();", :prompt => "Select" }%></br>
+			</div>
+			<div class="form-group">
+				<%= select_tag "endYear", options_for_select($yearList, :selected=>params[:endYear]), {:onchange => "this.form.submit();", :prompt => "Select" }%></br>
+			</div>
+			<div class="form-group">
+				<%= select_tag "deviceType", options_for_select($deviceList, :selected=>params[:deviceType]), {:onchange => "this.form.submit();", :prompt => "Select" }%></br>
+			</div>
+		</form>
 		<br>
 		<br>
 		<%= column_chart @tempData, stacked: true %>
