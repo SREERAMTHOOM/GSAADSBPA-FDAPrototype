@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-lg-12">
 	</div>
-	
+</div>
 
  <!-- Projects Row -->
 <div class="row">
@@ -30,14 +30,12 @@
 				</tbody>
 			</table>
 			<%= link_to "Read More", "/enforcements/details", {:class => "button"} %><br>
-			<%= line_chart "/enforcements/devicereport?type=device", discrete: true %>
+			<%= line_chart "/enforcements/reportgroupbyyear?type=device", discrete: true %>
 			<p>Graph showing Total Adverse Events Reported So Far Ordered by Years</p>
 		</div>
 	</div>
-            
-            
+
 	<div class="col-md-6 img-portfolio">
-		<div class="contentsbox">
 			<h2>Latest Enforcement Reports</h2>
 			<table class="boxer">
 				<thead class="box-row">
@@ -58,9 +56,9 @@
 				</tbody>
 			</table>
 			<%= link_to "Read More", "/enforcements/details", {:class => "button"} %><br>
-			<%= line_chart "/enforcements/devicereport?type=enf", discrete: true %>
+			<%= line_chart "/enforcements/reportgroupbyyear?type=enf", discrete: true %>
 			<p>Graph showing Total Enforcement Reports Reported So Far Ordered by Years</p>
 		</div>
 	</div>
 </div>
-<!-- /.row -->
+<!-- .row -->

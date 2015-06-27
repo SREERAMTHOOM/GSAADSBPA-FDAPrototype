@@ -48,7 +48,7 @@ gem 'rest-client'
 gem 'chartkick', '~> 1.2.4'
 gem 'groupdate', '~> 2.1.1'
 gem 'active_median', '~> 0.1.0'
-gem "font-awesome-rails"
+#gem "font-awesome-rails"
 
-gem 'bootstrap-sass', '~> 3.3.5'
+#gem 'bootstrap-sass', '~> 3.3.5'
 

@@ -1,56 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Gsaads</title>
+    <title>Adverse Events & Enforcement Reports for Medical Devices</title>
 	<!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 	<![endif]-->
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag    'bootstrap.min' %>
+	<%= stylesheet_link_tag    'modern-business' %>
 	<%= stylesheet_link_tag    'style' %>
-	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag "jquery" %>
+	<%= javascript_include_tag "bootstrap.min" %>
 	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 
 	<%= csrf_meta_tags %>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-<script>
-	function loadChartData(url, chartName, chartType){
-		$.get(url, function(data, status){
-			var categories = new Array();
-			var groupedObjects = new Array();
-			var i = 0;
-
-			myobj = {};
-			_.each(data.results,function(obj){
-				var existingObj;
-				var year = obj.time.substring(0, 4);
-				if($.inArray(obj.time.substring(0, 4),categories) >= 0) {
-					existingObj = _.find(data.results,function(o){return o.time.substring(0, 4) === obj.time.substring(0, 4); });
-					existingObj.count += obj.count;
-				} else {
-					groupedObjects[i] = obj;
-					categories[i] = obj.time.substring(0, 4);
-					i++;
-				}
-			});
-			_.each(groupedObjects, function(key, value) {
-				myobj[key.time.substring(0, 4)] = key.count;
-			});
-
-			if(chartType == "pie") {
-				new Chartkick.PieChart(chartName, myobj, {"discrete":true});
-			} else if(chartType == "line") {
-				new Chartkick.LineChart(chartName, myobj, {"discrete":true});
-			} else {
-				new Chartkick.LineChart(chartName, myobj, {"discrete":true});
-			}
-		});
-	}
-
-	$('.carousel').carousel({
-		interval: 5000 //changes the speed
-	})
-</script>
 <% if content_for? :for_head %>
 	<%= yield :for_head %>
 <% end %>
@@ -73,16 +37,16 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li>
-					<%= link_to "Home", "/" %>
+					<%= link_to "HOME", "/" %>
 				</li>
 				<li>
-					<%= link_to "Adverse events", "/enforcements/advevents" %>
+					<%= link_to "ADVERSE EVENTS", "/enforcements/advevents" %>
 				</li>
 				<li>
-					<%= link_to "Enforcement reports", "/enforcements/enfreports" %>
+					<%= link_to "ENFORCEMENT REPORTS", "/enforcements/enfreports" %>
 				</li>
 				<li>
-					<%= link_to "Medical Devices", "/enforcements/devices" %>
+					<%= link_to "MEDICAL DEVICES", "/enforcements/devices" %>
 				</li>
 				<li >
 					<%= link_to "HELP!", "/" %>

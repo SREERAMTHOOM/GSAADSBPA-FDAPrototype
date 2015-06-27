@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   controller :enforcements do 
 	  get "enforcements/display" 	=> :display
-	  get "enforcements/devicereport" 	=> :devicereport
+	  get "enforcements/reportgroupbyyear" 	=> :reportgroupbyyear
 	  get "enforcements/advevents" 	=> :advevents
 	  get "enforcements/enfreports" 	=> :enfreports
 	  get "enforcements/devices" 	=> :devices

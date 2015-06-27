@@ -19,22 +19,12 @@ class EnforcementsController < ApplicationController
     @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:date_of_event&limit=5")['results']
     @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?limit=5")['results']
   end
-  def devicereport
+  def reportgroupbyyear
     type = params[:type]
-	keyName = 'time'
     if type == "device"
 	  url = "https://api.fda.gov/device/event.json?count=date_received"
     elsif type == "enf"
 	  url = "https://api.fda.gov/device/enforcement.json?count=report_date"
-    elsif type == "dummy"
-	  url = "https://api.fda.gov/device/event.json?search=manufacturer_name:Corp+AND+_exists_:date_of_event+AND+date_of_event:[20090101+TO+20151231]&count=device.generic_name.exact"
-    elsif type == "advbymfr"
-	  @startYear = params[:startYear]
-	  @mfr = params[:mfr]
-	  @startYear = "2015" if @startYear.nil? || @startYear.empty?
-	  @mfr = "Corp" if @mfr.nil? || @mfr.empty?
-	  url = "https://api.fda.gov/device/event.json?search=date_received:[" + @startYear + "0101+TO+" + @startYear + "0101]&count=date_received"
-	  puts "URL : " + url
 	else
 	  url = "https://api.fda.gov/device/enforcement.json?count=report_date"
     end
@@ -74,7 +64,7 @@ class EnforcementsController < ApplicationController
     if type == "advbymfr"
 	  url = "https://api.fda.gov/device/event.json?search=manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_received:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=device.generic_name.exact"
     elsif type == "advbytype"
-		url = "https://api.fda.gov/device/event.json?search=device.generic_name:" + @deviceType + "+AND+manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_of_event:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=event_type.exact"
+		url = "https://api.fda.gov/device/event.json?search=manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_of_event:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=event_type.exact"
     elsif type == "enfbymfr"
 		url = "https://api.fda.gov/device/enforcement.json?search=report_date:[20150101+TO+20151231]&limit=25&count=recalling_firm.exact"
 	else
@@ -110,8 +100,8 @@ class EnforcementsController < ApplicationController
 	@tempData=[]
 	puts "tempData: #{@tempData}"
 	if eventData.nil? || eventData.empty? || enfData.nil? || enfData.empty?
-		@tempData << {name: "No Data Found", data: [["NoDataFound", 1]]}
-		puts "tempData1: #{@tempData}"
+		@tempData << {name: "No Data Found", data: [["NoDataFound", 0]]}
+		#puts "tempData1: #{@tempData}"
 	else
 		#puts "Response in reports: #{all}"
 		eventResult = []
@@ -122,7 +112,7 @@ class EnforcementsController < ApplicationController
 		#eventResult = eventResult[0...-1]
 		#eventResult += "]"
 		@tempData << {name: "Adverse Events", data: eventResult}
-		puts "tempData2: #{@tempData}"
+		#puts "tempData2: #{@tempData}"
 		enfResult = []
 		enfData.each do |item|
 		  #enfResult += "\"#{item["term"]}\", #{item["count"]},"
@@ -132,9 +122,9 @@ class EnforcementsController < ApplicationController
 		#enfResult = enfResult[0...-1]
 		#enfResult += "]"
 		@tempData << {name: "Enforcements", data: enfResult}
-		puts "tempData3: #{@tempData}"
+		#puts "tempData3: #{@tempData}"
 	end
-	puts "tempData4: #{@tempData}"
+	#puts "tempData4: #{@tempData}"
   end
   def details
     @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?limit=20")['results']

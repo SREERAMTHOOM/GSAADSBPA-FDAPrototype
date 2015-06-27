@@ -1,82 +1,27 @@
-<% content_for :for_head do %>
-<script>
-function DropDown(el) {
-	this.dd = el;
-	this.placeholder = this.dd.children('span');
-	this.opts = this.dd.find('ul.dropdown > li');
-	this.val = '';
-	this.index = -1;
-	this.initEvents();
-}
-
-DropDown.prototype = {
-	initEvents : function() {
-		var obj = this;
-
-		obj.dd.on('click', function(event){
-			$(this).toggleClass('active');
-			return false;
-		});
-
-		obj.opts.on('click',function(){
-			var opt = $(this);
-			obj.val = opt.text();
-			obj.index = opt.index();
-			obj.placeholder.text(obj.val);
-		});
-	},
-	getValue : function() {
-		return this.val;
-	},
-	getIndex : function() {
-		return this.index;
-	}
-}
-
-$(function() {
-	var dd = new DropDown( $('#dd') );
-	$(document).click(function() {
-		// all dropdowns
-		$('.wrapper-dropdown-3').removeClass('active');
-	});
-});
-
-</script>
-<% end %>
-
 <div class="row">
-
 	<div class="col-lg-12">
 		<h2>Adverse Event Reports by Manufacturers</h2>
-			<form role="form" class="form-inline">
-				<div class="form-group">
-					<%= select_tag "startYear", options_for_select($yearList, :selected=>params[:startYear]), {:onchange => "this.form.submit();", :prompt => "Select" }%></br>
-				</div>
-				<div class="form-group">
-					<%= select_tag "mfr", options_for_select($mfrList, :selected=>params[:mfr]), {:onchange => "this.form.submit();", :prompt => "Select" }%></br>
-				</div>
-			</form>
-            </div>
-
-        <div class="row">
-            <div class="col-md-6 img-portfolio">
-            	<div class="contentsbox">
-                  <h3>Device Types</h3>
-		   
-				<%= pie_chart "/enforcements/reports?type=advbymfr&startYear=" + @startYear+ "&mfr=" + @mfr, discrete: true %>
-		
+		<form role="form" class="form-inline">
+			<div class="form-group">
+				<%= select_tag "startYear", options_for_select($yearList, :selected=>params[:startYear]), {:onchange => "this.form.submit();", :prompt => "Select" }%>
+			</div>
+			<div class="form-group">
+				<%= select_tag "mfr", options_for_select($mfrList, :selected=>params[:mfr]), {:onchange => "this.form.submit();", :prompt => "Select" }%>
+			</div>
+		</form>
 	</div>
-            </div>
-            <div class="col-md-6 img-portfolio">
-            	<div class="contentsbox">
-            		 <h3>Seriousness of Adverse Event caused by Device Name</h3>
-		
-		<%= pie_chart "/enforcements/reports?type=advbytype&startYear=" + @startYear+ "&mfr=" + @mfr, discrete: true %>
-		
-						</div>
-            </div>
-
+</div>
+<div class="row">
+	<div class="col-md-6 img-portfolio">
+		<div class="contentsbox">
+			<h3>Device Types</h3>
+			<%= pie_chart "/enforcements/reports?type=advbymfr&startYear=" + @startYear+ "&mfr=" + @mfr, discrete: true %>
+		</div>
 	</div>
-
-
-</div> <!-- .row -->
+	<div class="col-md-6 img-portfolio">
+		<div class="contentsbox">
+			<h3>Seriousness of Adverse Event caused by Device Name</h3>
+			<%= pie_chart "/enforcements/reports?type=advbytype&startYear=" + @startYear+ "&mfr=" + @mfr, discrete: true %>
+		</div>
+	</div>
+</div>
