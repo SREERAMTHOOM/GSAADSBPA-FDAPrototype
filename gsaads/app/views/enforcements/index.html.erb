@@ -1,64 +1,52 @@
-<!-- Features Section -->
-<div class="row">
-	<div class="col-lg-12">
-	</div>
-</div>
-
- <!-- Projects Row -->
 <div class="row">
 	<div class="col-md-6 img-portfolio">
-		<div class="contentsbox">
-			<h2>Latest Adverse Event</h2>
-			<table class="boxer">
-				<thead >
-					<tr class="box-row">
-						<th class="box">Date</th>
-						<th class="box">Location</th>
-						<th class="box">Device</th>
-						<th class="box">Event</th>
-					</tr>
-				</thead>
-				<tbody>
+		<h2>Latest Adverse Events</h2>
+		<table class="boxer">
+			<thead >
+				<tr class="box-row">
+					<th class="box">Date</th>
+					<th class="box">Location</th>
+					<th class="box">Device</th>
+					<th class="box">Event</th>
+				</tr>
+			</thead>
+			<tbody>
 				<% @advEvents.each_with_index do |result, index| %>
-					<tr class="box-row1">
-						<td class="box"><%= result["date_of_event"] %></td>
-						<td class="box"><%= result["event_location"] %></td>
-						<td class="box"><%= result["device"][0]["model_number"] %></td>
-						<td class="box"><%= result["event_type"] %></td>
-					</tr>
+				<tr class="box-row1">
+					<td class="box"><%= result["date_of_event"] %></td>
+					<td class="box"><%= result["event_location"] %></td>
+					<td class="box"><%= result["device"][0]["model_number"] %></td>
+					<td class="box"><%= result["event_type"] %></td>
+				</tr>
 				<% end %>
-				</tbody>
-			</table>
-			<%= link_to "Read More", "/enforcements/details", {:class => "button"} %><br>
-			<%= line_chart "/enforcements/reportgroupbyyear?type=device", discrete: true %>
-			<p>Graph showing Total Adverse Events Reported So Far Ordered by Years</p>
-		</div>
+			</tbody>
+		</table>
+		<%= link_to "view More ...", "/enforcements/details", {:class => "button"} %><br>
+		<%= line_chart "/enforcements/reportgroupbyyear?type=device", discrete: true %>
+		<p>Total Adverse Events Reported by Year</p>
 	</div>
-
 	<div class="col-md-6 img-portfolio">
-			<h2>Latest Enforcement Reports</h2>
-			<table class="boxer">
-				<thead class="box-row">
-					<tr>
-						<th class="box2">Date</th>
-						<th class="box2">Manufacturers</th>
-						<th class="box2">Device Type</th>
-					</tr>
-				</thead>
-				<tbody class="box-row1">
+		<h2>Latest Enforcement Reports</h2>
+		<table class="boxer">
+			<thead class="box-row">
+				<tr>
+					<th class="box2">Date</th>
+					<th class="box2">Manufacturer</th>
+					<th class="box2">Device Type</th>
+				</tr>
+			</thead>
+			<tbody class="box-row1">
 				<% @enfEvents.each_with_index do |result, index| %>
-					<tr >
-						<td class="box2"><%= result["recall_initiation_date"] %></td>
-						<td class="box2"><%= result["recalling_firm"] %></td>
-						<td class="box2"><%= result["code_info"][0...10] %></td>
-					</tr>
+				<tr >
+					<td class="box2"><%= result["recall_initiation_date"] %></td>
+					<td class="box2"><%= result["recalling_firm"] %></td>
+					<td class="box2"><%= result["code_info"][0...10] %></td>
+				</tr>
 				<% end %>
-				</tbody>
-			</table>
-			<%= link_to "Read More", "/enforcements/details", {:class => "button"} %><br>
-			<%= line_chart "/enforcements/reportgroupbyyear?type=enf", discrete: true %>
-			<p>Graph showing Total Enforcement Reports Reported So Far Ordered by Years</p>
-		</div>
+			</tbody>
+		</table>
+		<%= link_to "View More ...", "/enforcements/details", {:class => "button"} %><br>
+		<%= line_chart "/enforcements/reportgroupbyyear?type=enf", discrete: true %>
+		<p>Total Enforcement Reports Reported by Year</p>
 	</div>
 </div>
-<!-- .row -->
