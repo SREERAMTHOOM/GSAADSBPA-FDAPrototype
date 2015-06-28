@@ -16,8 +16,10 @@ class EnforcementsController < ApplicationController
     end
   end
   def index
-    @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:date_of_event&limit=5")['results']
-    @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?limit=5")['results']
+    @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:event_type+AND+_exists_:date_of_event+AND+_exists_:manufacturer_name+AND+_exists_:device.generic_name+AND+date_of_event:[20150101+TO+20151231]&limit=5")['results']
+	@advEvents = @advEvents.sort_by { |k| k["date_of_event"] }.reverse
+    @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=_exists_:recalling_firm+AND+_exists_:recall_initiation_date+AND+_exists_:status+AND+_exists_:classification+AND+recall_initiation_date:[20150101+TO+20151231]&limit=5")['results']
+	@enfEvents = @enfEvents.sort_by { |k| k["recall_initiation_date"] }.reverse
   end
   def reportgroupbyyear
     type = params[:type]

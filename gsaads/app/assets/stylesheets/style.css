@@ -2326,10 +2326,9 @@ tr.boxer .box-row1 {
 
 .boxer .box2 {
    display: table-cell;
-   width: 40%;
    text-align: left;
    vertical-align: top;
-   border: 0px;
+   border: 30px;
 }
 
 
@@ -2609,3 +2608,10 @@ hr.spacer {
   font-style: normal;
 }
 
+table {
+	width: 100%
+}
+
+td { 
+    padding: 3px;
+}
