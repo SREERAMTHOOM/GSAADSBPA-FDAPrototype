@@ -93,8 +93,8 @@ class EnforcementsController < ApplicationController
 	@startYear = "2000" if @startYear.nil? || @startYear.empty?
 	@endYear = "2015" if @endYear.nil? || @endYear.empty?
 	@deviceType = "INSULIN+INFUSION+PUMP" if @deviceType.nil? || @deviceType.empty?
-	eventsUrl = "https://api.fda.gov/device/event.json?search=generic_name:" + @deviceType + "+AND+date_of_event:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=manufacturer_name.exact"
-	enfUrl = "https://api.fda.gov/device/enforcement.json?search=reason_for_recall:" + @deviceType + "+AND+recall_initiation_date:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=recalling_firm.exact"
+	eventsUrl = "https://api.fda.gov/device/event.json?search=generic_name:" + @deviceType + "+AND+date_of_event:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=date_of_event"
+	enfUrl = "https://api.fda.gov/device/enforcement.json?search=reason_for_recall:" + @deviceType + "+AND+recall_initiation_date:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=recall_initiation_date"
     eventData = get_content(eventsUrl)
 	#puts "eventData: #{eventData}"
     enfData = get_content(enfUrl)

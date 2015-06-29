@@ -5,19 +5,19 @@
 			<table class="boxer">
 				<thead >
 					<tr class="box-row">
-						<th class="box">Date</th>
-						<th class="box">Manufacturer</th>
-						<th class="box">Device</th>
-						<th class="box">Event</th>
+						<th class="box-Date">Date</th>
+						<th class="box-Manufac">Manufacturer</th>
+						<th class="box-Device">Device</th>
+						<th class="box-Event">Event</th>
 					</tr>
 				</thead>
 				<tbody>
 				<% @advEvents.each_with_index do |result, index| %>
 					<tr class="box-row1">
-						<td class="box"><%= result["date_of_event"] %></td>
-						<td class="box"><%= result["manufacturer_name"][0...10] + "..."  %></td>
-						<td class="box"><%= result["device"][0]["generic_name"][0...10] + "..." %></td>
-						<td class="box"><%= result["event_type"] %></td>
+						<td class="box-Date"><%= result["date_of_event"] %></td>
+						<td class="box-Manufac"><%= result["manufacturer_name"][0...10] + "..."  %></td>
+						<td class="box-Device"><%= result["device"][0]["generic_name"][0...10] + "..." %></td>
+						<td class="box-Event"><%= result["event_type"] %></td>
 					</tr>
 				<% end %>
 				</tbody>
@@ -29,19 +29,19 @@
 			<table class="boxer">
 				<thead class="box-row">
 					<tr>
-						<th class="box2">Date</th>
-						<th class="box2">Manufacturer</th>
-						<th class="box2">Status</th>
-						<th class="box2">Classification</th>
+						<th class="box-Date">Date</th>
+						<th class="box-Manufac">Manufacturer</th>
+						<th class="box-Device">Status</th>
+						<th class="box-Event">Classification</th>
 					</tr>
 				</thead>
 				<tbody class="box-row1">
 				<% @enfEvents.each_with_index do |result, index| %>
 					<tr >
-						<td class="box2"><%= result["recall_initiation_date"] %></td>
-						<td class="box2"><%= result["recalling_firm"] %></td>
-						<td class="box2"><%= result["status"] %></td>
-						<td class="box2"><%= result["classification"] %></td>
+						<td class="box-Date"><%= result["recall_initiation_date"] %></td>
+						<td class="box-Manufac"><%= result["recalling_firm"] %></td>
+						<td class="box-Device"><%= result["status"] %></td>
+						<td class="box-Event"><%= result["classification"] %></td>
 					</tr>
 				<% end %>
 				</tbody>

@@ -2302,7 +2302,7 @@ body {
    border-collapse: collapse;
    margin-bottom: 25px;
    font-size: 1em;
-   
+   line-height: 130%;
    
 }
 
@@ -2316,12 +2316,67 @@ tr.boxer .box-row1 {
    display: table-row;
   
 } 
+.boxer .box-Date {
+   display: table-cell;
+   width: 10%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 4%;
+}
+.boxer .box-Manufac {
+   display: table-cell;
+   width: 30%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 5%;
+   padding-bottom: 4%;
+}
+.boxer .box-Manufac2 {
+   display: table-cell;
+   width: 40%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 5%;
+   padding-left: 5%;
+   padding-bottom: 4%;
+}
+.boxer .box-Device {
+   display: table-cell;
+   width: 30%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 5%;
+   padding-bottom: 4%;
+}
+.boxer .box-Device2 {
+   display: table-cell;
+   width: 35%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 5%;
+    padding-left: 5%;
+   padding-bottom: 4%;
+}
+.boxer .box-Event {
+   display: table-cell;
+   width: 10%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+     padding-bottom: 4%;
+}
 .boxer .box {
    display: table-cell;
    width: 30%;
    text-align: left;
    vertical-align: top;
    border: 0px;
+   padding-bottom: 2%;
 }
 
 .boxer .box2 {
@@ -2427,7 +2482,7 @@ hr.spacer {
 }
 
 .footer {
-  background-color: #7c7c7c;
+  background-color: #585858;
   height: 150px;
   padding-top: 30px;
   color: #ffffff;
@@ -2490,6 +2545,9 @@ hr.spacer {
 @media screen and (max-width: 480px) {
   .social-links {
     text-align: left;
+  }
+  .boxer {
+   font-size: 0.8em;
   }
 }
 .social-links a {
@@ -2613,5 +2671,5 @@ table {
 }
 
 td { 
-    padding: 3px;
+    padding-bottom: 3px;
 }
