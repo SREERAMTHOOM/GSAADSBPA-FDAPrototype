@@ -2,15 +2,15 @@ require "rest-client"
 
 class EnforcementsController < ApplicationController
   def get_content url
-	puts url
-	puts "Escaped url : #{url.gsub(' ','+')}"
+	#puts url
+	#puts "Escaped url : #{url.gsub(' ','+')}"
     begin
 	  response = RestClient.get URI.escape(url.gsub(' ', '+'))
-	  puts "after getting response"
+	  #puts "after getting response"
 	  #puts response
 	  return JSON.parse(response)['results']
     rescue => e
-	  puts "in rescue : #{e}"
+	  #puts "in rescue : #{e}"
 	  #return e.response["error"]["message"]
 	  return nil
     end
@@ -24,7 +24,7 @@ class EnforcementsController < ApplicationController
   def reportgroupbyyear
     type = params[:type]
     if type == "device"
-	  url = "https://api.fda.gov/device/event.json?count=date_received"
+	  url = "https://api.fda.gov/device/event.json?search=date_received:[20000101+TO+20151231]&count=date_received"
     elsif type == "enf"
 	  url = "https://api.fda.gov/device/enforcement.json?count=report_date"
 	else
@@ -78,7 +78,7 @@ class EnforcementsController < ApplicationController
 	else
 		#puts "Response in reports: #{all}"
 		result = "{"
-		all.each do |item|
+		all.take(25).each do |item|
 		  result += "\"#{item["term"].gsub(/"/, '\\"')}\": #{item["count"]},"
 		end
 		result = result[0...-1]
@@ -96,11 +96,11 @@ class EnforcementsController < ApplicationController
 	eventsUrl = "https://api.fda.gov/device/event.json?search=generic_name:" + @deviceType + "+AND+date_of_event:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=manufacturer_name.exact"
 	enfUrl = "https://api.fda.gov/device/enforcement.json?search=reason_for_recall:" + @deviceType + "+AND+recall_initiation_date:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=recalling_firm.exact"
     eventData = get_content(eventsUrl)
-	puts "eventData: #{eventData}"
+	#puts "eventData: #{eventData}"
     enfData = get_content(enfUrl)
-	puts "enfData: #{enfData}"
+	#puts "enfData: #{enfData}"
 	@tempData=[]
-	puts "tempData: #{@tempData}"
+	#puts "tempData: #{@tempData}"
 	if eventData.nil? || eventData.empty? || enfData.nil? || enfData.empty?
 		@tempData << {name: "No Data Found", data: [["NoDataFound", 0]]}
 		#puts "tempData1: #{@tempData}"

@@ -2328,7 +2328,7 @@ tr.boxer .box-row1 {
    display: table-cell;
    text-align: left;
    vertical-align: top;
-   border: 30px;
+   border: 0px;
 }
 
 
@@ -2609,7 +2609,7 @@ hr.spacer {
 }
 
 table {
-	width: 100%
+	width: 90%
 }
 
 td { 

@@ -14,14 +14,14 @@
 				<% @advEvents.take(5).each_with_index do |result, index| %>
 				<tr class="box-row1">
 					<td class="box2"><%= result["date_of_event"] %></td>
-					<td class="box2"><%= result["manufacturer_name"].length > 30 ? (result["manufacturer_name"][0...27] + "...") : result["manufacturer_name"] %></td>
-					<td class="box2"><%= result["device"][0]["generic_name"].length > 20 ? (result["device"][0]["generic_name"][0...17] + "...") : result["device"][0]["generic_name"] %></td>
+					<td class="box2"><%= format_description(result["manufacturer_name"].titleize, 30) %></td>
+					<td class="box2"><%= format_description(result["device"][0]["generic_name"].titleize, 20) %></td>
 					<td class="box2"><%= result["event_type"] %></td>
 				</tr>
 				<% end %>
 			</tbody>
 		</table>
-		<%= link_to "view More ...", "/enforcements/details", {:class => "button"} %><br>
+		<%= link_to "View More", "/enforcements/details", {:class => "button"} %><br>
 		<%= line_chart "/enforcements/reportgroupbyyear?type=device", discrete: true %>
 		<p>Total Adverse Events Reported by Year</p>
 	</div>
@@ -47,7 +47,7 @@
 				<% end %>
 			</tbody>
 		</table>
-		<%= link_to "View More ...", "/enforcements/details", {:class => "button"} %><br>
+		<%= link_to "View More", "/enforcements/details", {:class => "button"} %><br>
 		<%= line_chart "/enforcements/reportgroupbyyear?type=enf", discrete: true %>
 		<p>Total Enforcement Reports Reported by Year</p>
 	</div>
