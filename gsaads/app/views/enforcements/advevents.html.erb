@@ -3,10 +3,10 @@
 		<h2>Adverse Event Reports by Manufacturers</h2>
 		<form role="form" class="form-inline">
 			<div class="form-group">
-				<%= select_tag "startYear", options_for_select($yearList, :selected=>params[:startYear]), {:onchange => "this.form.submit();", :prompt => "Select" }%>
+				<%= select_tag "startYear", options_for_select($yearList, :selected=>params[:startYear]), {:onchange => "this.form.submit();", :prompt => "Select year" } %>
 			</div>
 			<div class="form-group">
-				<%= select_tag "mfr", options_for_select($mfrList, :selected=>params[:mfr]), {:onchange => "this.form.submit();", :prompt => "Select" }%>
+				<%= select_tag "mfr", options_for_select($mfrList, :selected=>params[:mfr]), {:onchange => "this.form.submit();", :prompt => "Select Manufacturer", :class => "col-md-6" } %>
 			</div>
 		</form>
 	</div>
