@@ -16,7 +16,7 @@ class EnforcementsController < ApplicationController
     end
   end
   def index
-    @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:event_type+AND+_exists_:date_of_event+AND+_exists_:manufacturer_name+AND+_exists_:device.generic_name+AND+date_of_event:[20150101+TO+20151231]")['results']
+    @advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:event_type+AND+_exists_:date_of_event+AND+_exists_:manufacturer_name+AND+_exists_:device.generic_name+AND+date_of_event:[20150101+TO+20151231]&limit=100")['results']
 	@advEvents = @advEvents.sort_by { |k| k["date_of_event"] }.reverse
     @enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=_exists_:recalling_firm+AND+_exists_:recall_initiation_date+AND+_exists_:status+AND+_exists_:classification+AND+recall_initiation_date:[20150101+TO+20151231]&limit=5")['results']
 	@enfEvents = @enfEvents.sort_by { |k| k["recall_initiation_date"] }.reverse
@@ -79,7 +79,7 @@ class EnforcementsController < ApplicationController
 		#puts "Response in reports: #{all}"
 		result = "{"
 		all.each do |item|
-		  result += "\"#{item["term"]}\": #{item["count"]},"
+		  result += "\"#{item["term"].gsub(/"/, '\\"')}\": #{item["count"]},"
 		end
 		result = result[0...-1]
 		result += "}"
