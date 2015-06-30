@@ -40,7 +40,7 @@
 					<%= link_to "Home", "/" %>
 				</li>
 				<li>
-					<%= link_to "Adverse Events", "/enforcements/advevents" %>
+					<%= link_to "Adverse Events", "/enforcements/advevents", :class => current_class?('/enforcements/advevents')  %>
 				</li>
 				<li>
 					<%= link_to "Enforcement Reports", "/enforcements/enfreports" %>
