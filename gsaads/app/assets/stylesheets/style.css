@@ -48,7 +48,7 @@ a:hover, a:active {
   color:#ffffff; background-color:#888888; 
 }
 .active {
-	color:#ffffff; background-color:#888888; 
+	color:#ffffff; background-color:#585854; 
 }
 
 img.logo { float:left; width: 20%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px;
@@ -258,7 +258,6 @@ table {
   border: none;
   outline: none;
   font-size: 14px;
-  font-size: 0.875em;
 }
 
 .help_button {
@@ -2491,6 +2490,7 @@ hr.spacer {
   padding-top: 10px;
   color: #ffffff;
   width:100%;
+  font-size:0.8em;
 }
 .site-footer .copy {
   font-size: 12px;

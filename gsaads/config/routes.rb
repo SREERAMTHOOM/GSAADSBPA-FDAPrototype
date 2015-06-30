@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 	  get "enforcements/adveventsdetails" 	=> :adveventsdetails
 	  get "enforcements/enfdetails" 	=> :enfdetails
 	  get "enforcements/reports" 	=> :reports
+	  get "enforcements/about" 	=> :about
   end
 
   # Example of regular route:

@@ -8,15 +8,15 @@
 				<table class="boxer">
 					<thead  class="box-row">
 						<tr>
-							<th class="box2">Manufacturers</th>
-							<th class="box2">Total</th>
+							<th class="box-Manufac2">Manufacturers</th>
+							<th class="box-Date">Total</th>
 						</tr>
 					</thead>
 					<tbody class="box-row1">
 					<% @enfEvents.each_with_index do |result, index| %>
 						<tr>
-							<td class="box"><%= result["term"] %></td>
-							<td class="box"><%= result["count"] %></td>
+							<td class="box-Manufac2"><%= result["term"] %></td>
+							<td class="box-Date"><%= result["count"] %></td>
 						</tr>
 					<% end %>
 					</tbody>
@@ -26,7 +26,7 @@
 		<div class="col-md-6 img-portfolio">
 			<div class="contentsbox">
 				<h3></h3>
-					<%= pie_chart "/enforcements/reports?type=enfbymfr", discrete: true %>
+					<%= pie_chart "/enforcements/reports?type=enfbymfr", {discrete: true, library: {chartArea:{left:0,top:10,width:"100%"}}} %>
 			</div>
 		</div>
 	</div>
