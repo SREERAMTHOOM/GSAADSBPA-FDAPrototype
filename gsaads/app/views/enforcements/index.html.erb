@@ -13,7 +13,7 @@
 			<tbody>
 				<% @advEvents.take(5).each_with_index do |result, index| %>
 				<tr class="box-row1">
-					<td class="box-Date"><%= result["date_of_event"] %></td>
+					<td class="box-Date"><%= format_datestr(result["date_of_event"]) %></td>
 					<td class="box-Manufac"><%= format_description(result["manufacturer_name"].titleize, 30) %></td>
 					<td class="box-Device"><%= format_description(result["device"][0]["generic_name"].titleize, 20) %></td>
 					<td class="box-Event"><%= result["event_type"] %></td>
@@ -39,7 +39,7 @@
 			<tbody class="box-row1">
 				<% @enfEvents.each_with_index do |result, index| %>
 				<tr >
-					<td class="box-Date"><%= result["recall_initiation_date"] %></td>
+					<td class="box-Date"><%= format_datestr(result["recall_initiation_date"]) %></td>
 					<td class="box-Manufac2"><%= result["recalling_firm"] %></td>
 					<td class="box-Device2"><%= result["status"] %></td>
 					<td class="box-Event"><%= result["classification"] %></td>

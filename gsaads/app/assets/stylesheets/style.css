@@ -45,6 +45,10 @@ a:focus {
 }
 a:hover, a:active {
   outline: 0;
+  color:#ffffff; background-color:#888888; 
+}
+.active {
+	color:#ffffff; background-color:#888888; 
 }
 
 img.logo { float:left; width: 20%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px;
@@ -2483,8 +2487,8 @@ hr.spacer {
 
 .footer {
   background-color: #585858;
-  height: 150px;
-  padding-top: 30px;
+  height: 100px;
+  padding-top: 10px;
   color: #ffffff;
   width:100%;
 }

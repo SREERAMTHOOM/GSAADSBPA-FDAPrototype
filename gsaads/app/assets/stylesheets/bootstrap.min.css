@@ -3614,8 +3614,8 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	margin: 7.5px -15px
 }
 .navbar-nav>li>a {
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 22px;
+	padding-bottom: 22px;
 	line-height: 20px
 }
 
@@ -3650,8 +3650,8 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 	float: left
 }
 .navbar-nav>li>a {
-	padding-top: 15px;
-	padding-bottom: 15px
+	padding-top: 22px;
+	padding-bottom: 22px
 }
 }
 .navbar-form {
@@ -3902,7 +3902,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
 	border-color: #101010;
-	padding-top: 15px;
+	padding-top: 0px;
 
 }
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {

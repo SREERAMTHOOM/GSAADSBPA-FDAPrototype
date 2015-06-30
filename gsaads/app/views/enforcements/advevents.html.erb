@@ -15,11 +15,11 @@
 	<div class="col-md-6 img-portfolio">
 		<div class="contentsbox">
 			<h3>Device Types(Top 25)</h3>
-			<%= pie_chart "/enforcements/reports?type=advbymfr&startYear=" + @startYear+ "&mfr=" + @mfr, {discrete: true, library: {width: '100%', title: 'Device Types(Top 25)'}} %>
+			<%= pie_chart "/enforcements/reports?type=advbymfr&startYear=" + @startYear+ "&mfr=" + @mfr, {discrete: true, enableClick: true, library: {width: '100%'}} %>
 		</div>
 	</div>
 	<div class="col-md-6 img-portfolio">
-		<div class="contentsbox">
+		<div id="chart_device" class="contentsbox">
 			<h3>Seriousness of Adverse Event</h3>
 			<%= pie_chart "/enforcements/reports?type=advbytype&startYear=" + @startYear+ "&mfr=" + @mfr, {discrete: true, library: {width: '100%'}} %>
 		</div>

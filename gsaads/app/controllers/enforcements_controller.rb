@@ -62,11 +62,11 @@ class EnforcementsController < ApplicationController
 	#puts @startYear
 	@startYear = "2015" if @startYear.nil? || @startYear.empty?
 	@mfr = "Corp" if @mfr.nil? || @mfr.empty?
-	@deviceType = "INSULIN+INFUSION+PUMP" if @deviceType.nil? || @deviceType.empty?
+	@deviceType = "" if @deviceType.nil? || @deviceType.empty?
 	if type == "advbymfr"
 	  url = "https://api.fda.gov/device/event.json?search=manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_received:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=device.generic_name.exact"
 	elsif type == "advbytype"
-		url = "https://api.fda.gov/device/event.json?search=manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_of_event:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=event_type.exact"
+		url = "https://api.fda.gov/device/event.json?search=device.generic_name:" + @deviceType + "AND+manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_of_event:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=event_type.exact"
 	elsif type == "enfbymfr"
 		url = "https://api.fda.gov/device/enforcement.json?search=report_date:[20150101+TO+20151231]&limit=25&count=recalling_firm.exact"
 	else
