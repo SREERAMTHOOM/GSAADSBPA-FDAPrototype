@@ -91,7 +91,7 @@ class EnforcementsController < ApplicationController
 	@deviceType = params[:deviceType]
 	@startYear = "2000" if @startYear.nil? || @startYear.empty?
 	@endYear = "2015" if @endYear.nil? || @endYear.empty?
-	@deviceType = "ABBOTT LABORATORIES" if @deviceType.nil? || @deviceType.empty?
+	@deviceType = "INFUSION PUMP" if @deviceType.nil? || @deviceType.empty?
 	eventsUrl = "https://api.fda.gov/device/event.json?search=generic_name:" + @deviceType + "+AND+date_received:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=date_received"
 	enfUrl = "https://api.fda.gov/device/enforcement.json?search=reason_for_recall:" + @deviceType + "+AND+recall_initiation_date:[" + @startYear + "0101+TO+" + @endYear + "1231]&count=recall_initiation_date"
 	eventData = get_content(eventsUrl)
@@ -148,8 +148,9 @@ class EnforcementsController < ApplicationController
   def advevents
 	  @startYear = params[:startYear]
 	  @mfr = params[:mfr]
-	  @startYear = "2015" if @startYear.nil? || @startYear.empty?
-	  @mfr = "Corp" if @mfr.nil? || @mfr.empty?
+	  @startYear = "2000" if @startYear.nil? || @startYear.empty?
+	  @mfr = "ABBOTT LABORATORIES" if @mfr.nil? || @mfr.empty?
+	  @deviceType = "INFUSION PUMP" if @deviceType.nil? || @deviceType.empty?
 	  #url = "https://api.fda.gov/device/event.json?search=date_received:[" + @startYear + "0101+TO+" + @startYear + "0101]&count=manufacturer_name"
 	  #@advByMfr = JSON.parse(RestClient.get url)['results']
 	  #puts "URL : " + url
