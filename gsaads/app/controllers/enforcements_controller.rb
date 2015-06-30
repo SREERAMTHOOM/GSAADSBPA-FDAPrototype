@@ -18,7 +18,7 @@ class EnforcementsController < ApplicationController
   def index
 	@advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:event_type+AND+_exists_:date_of_event+AND+_exists_:manufacturer_name+AND+_exists_:device.generic_name+AND+date_of_event:[20150101+TO+20151231]&limit=100")['results']
 	@advEvents = @advEvents.sort_by { |k| k["date_of_event"] }.reverse
-	@enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=_exists_:recalling_firm+AND+_exists_:recall_initiation_date+AND+_exists_:status+AND+_exists_:classification+AND+recall_initiation_date:[20150101+TO+20151231]&limit=5")['results']
+	@enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=_exists_:recalling_firm+AND+_exists_:recall_initiation_date+AND+_exists_:status+AND+_exists_:classification+AND+recall_initiation_date:[20150101+TO+20151231]&limit=100")['results']
 	@enfEvents = @enfEvents.sort_by { |k| k["recall_initiation_date"] }.reverse
   end
   def reportgroupbyyear
@@ -66,7 +66,7 @@ class EnforcementsController < ApplicationController
 	if type == "advbymfr"
 	  url = "https://api.fda.gov/device/event.json?search=manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_received:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=device.generic_name.exact"
 	elsif type == "advbytype"
-		url = "https://api.fda.gov/device/event.json?search=device.generic_name:" + @deviceType + "AND+manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_of_event:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=event_type.exact"
+		url = "https://api.fda.gov/device/event.json?search=device.generic_name:" + @deviceType + "+AND+manufacturer_name:" + @mfr + "+AND+_exists_:date_of_event+AND+date_of_event:[" + @startYear + "0101+TO+" + @startYear + "1231]&count=event_type.exact"
 	elsif type == "enfbymfr"
 		url = "https://api.fda.gov/device/enforcement.json?search=report_date:[20150101+TO+20151231]&limit=25&count=recalling_firm.exact"
 	else
@@ -99,11 +99,12 @@ class EnforcementsController < ApplicationController
 	#puts "eventData: #{eventData}"
 	enfData = get_content(enfUrl)
 	#puts "enfData: #{enfData}"
-	@tempData=[]
+	@tempData = []
 	#puts "tempData: #{@tempData}"
 	if eventData.nil? || eventData.empty? || enfData.nil? || enfData.empty?
-		@tempData << {name: "No Data Found", data: [["NoDataFound", 0]]}
 		#puts "tempData1: #{@tempData}"
+		@tempData << ['', 'No Data Found', 'No Data Found']
+		@tempData << ['No Data Found', 0, 0]
 	else
 		eventDataHash = {}
 		eventData.group_by{ |h| h['time'][0..3] }.each do |loc,events|
@@ -127,17 +128,20 @@ class EnforcementsController < ApplicationController
 		allKeys = allKeys.uniq.sort
 		#puts "eventDataHash: #{eventDataHash}"
 		#puts "enfDataHash: #{enfDataHash}"
-		@tempData = []
-		@tempData << ['Graph', 'Adverse Events', 'Enforcements']
+		@tempData << ['', 'Adverse Events', 'Enforcements']
 		allKeys.each { |a| 
 			@tempData << [a, (eventDataHash[a].nil? ? 0 : eventDataHash[a]), (enfDataHash[a].nil? ? 0 : enfDataHash[a])]
 		}
 		#puts "tempData4: #{@tempData}"
 	end
   end
-  def details
-	@advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?limit=20")['results']
-	@enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?limit=20")['results']
+  def adveventsdetails
+	@advEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/event.json?search=_exists_:event_type+AND+_exists_:date_of_event+AND+_exists_:manufacturer_name+AND+_exists_:device.generic_name+AND+date_of_event:[20150101+TO+20151231]&limit=100")['results']
+	@advEvents = @advEvents.sort_by { |k| k["date_of_event"] }.reverse
+  end
+  def enfdetails
+	@enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=_exists_:recalling_firm+AND+_exists_:recall_initiation_date+AND+_exists_:status+AND+_exists_:classification+AND+recall_initiation_date:[20150101+TO+20151231]&limit=100")['results']
+	@enfEvents = @enfEvents.sort_by { |k| k["recall_initiation_date"] }.reverse
   end
   def enfreports
 	@enfEvents = JSON.parse(RestClient.get "https://api.fda.gov/device/enforcement.json?search=report_date:[20150101+TO+20151231]&limit=25&count=recalling_firm.exact")['results']

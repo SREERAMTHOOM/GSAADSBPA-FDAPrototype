@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-12 img-portfolio">
+		<div class="contentsbox">
+			<h2>Latest Adverse Event</h2>
+			<table class="boxer">
+				<thead >
+					<tr class="box-row">
+						<th class="box-Date">Date</th>
+						<th class="box-Manufac">Manufacturer</th>
+						<th class="box-Device">Device</th>
+						<th class="box-Event">Event</th>
+					</tr>
+				</thead>
+				<tbody>
+				<% @advEvents.each_with_index do |result, index| %>
+					<tr class="box-row1">
+						<td class="box-Date"><%= format_datestr(result["date_of_event"]) %></td>
+						<td class="box-Manufac"><%= result["manufacturer_name"].titleize %></td>
+						<td class="box-Device"><%= result["device"][0]["generic_name"].titleize %></td>
+						<td class="box-Event"><%= result["event_type"] %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- .row -->

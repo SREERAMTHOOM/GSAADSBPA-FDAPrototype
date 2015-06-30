@@ -11,7 +11,6 @@
 	<%= javascript_include_tag "jquery" %>
 	<%= javascript_include_tag "bootstrap.min" %>
 	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-
 	<%= csrf_meta_tags %>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
@@ -36,21 +35,11 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
-				<li>
-					<%= link_to "Home", "/" %>
-				</li>
-				<li>
-					<%= link_to "Adverse Events", "/enforcements/advevents", :class => current_class?('/enforcements/advevents')  %>
-				</li>
-				<li>
-					<%= link_to "Enforcement Reports", "/enforcements/enfreports" %>
-				</li>
-				<li>
-					<%= link_to "Medical Devices", "/enforcements/devices" %>
-				</li>
-				<li >
-					<%= link_to "About", "/" %>
-				</li>
+				<%= nav_link "Home", "/" %>
+				<%= nav_link "Adverse Events", "/enforcements/advevents" %>
+				<%= nav_link "Enforcement Reports", "/enforcements/enfreports" %>
+				<%= nav_link "Medical Devices", "/enforcements/devices" %>
+				<%= nav_link "About", "/" %>
 		  </ul>
 				</li>       
 		</div>

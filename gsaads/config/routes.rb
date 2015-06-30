@@ -15,7 +15,8 @@ Rails.application.routes.draw do
 	  get "enforcements/advevents" 	=> :advevents
 	  get "enforcements/enfreports" 	=> :enfreports
 	  get "enforcements/devices" 	=> :devices
-	  get "enforcements/details" 	=> :details
+	  get "enforcements/adveventsdetails" 	=> :adveventsdetails
+	  get "enforcements/enfdetails" 	=> :enfdetails
 	  get "enforcements/reports" 	=> :reports
   end
 

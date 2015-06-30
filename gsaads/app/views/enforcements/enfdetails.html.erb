@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-12 img-portfolio">
+		<h2>Latest Enforcement Reports</h2>
+			<table class="boxer">
+				<thead class="box-row">
+					<tr>
+						<th class="box-Date">Date</th>
+						<th class="box-Manufac">Manufacturer</th>
+						<th class="box-Device">Status</th>
+						<th class="box-Event">Classification</th>
+					</tr>
+				</thead>
+				<tbody class="box-row1">
+				<% @enfEvents.each_with_index do |result, index| %>
+					<tr >
+						<td class="box-Date"><%= format_datestr(result["recall_initiation_date"]) %></td>
+						<td class="box-Manufac2"><%= result["recalling_firm"].titleize %></td>
+						<td class="box-Device2"><%= result["status"] %></td>
+						<td class="box-Event"><%= result["classification"] %></td>
+					</tr>
+				<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
