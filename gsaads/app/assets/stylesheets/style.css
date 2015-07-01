@@ -47,9 +47,13 @@ a:hover, a:active {
   outline: 0;
   color:#ffffff; background-color:#888888; 
 }
+
 .active {
 	color:#ffffff; background-color:#585854; 
 }
+
+.readmore { color:#494949;
+	}
 
 img.logo { float:left; width: 20%; padding-top: 10px; padding-right: 10px; padding-bottom: 10px;
 	}
