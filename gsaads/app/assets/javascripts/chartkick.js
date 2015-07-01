@@ -592,7 +592,7 @@
 					async : false,
 					context : document.body,
 					success : function(response) {
-						 new Chartkick.PieChart("chart_device",response);
+						 new Chartkick.PieChart("chart_device",response, {"discrete":true,"library":{"chartArea":{"left":0,"top":10,"width":"100%"}}});
 					}
 			   });
 			  }
