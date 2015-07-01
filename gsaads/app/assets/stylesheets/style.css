@@ -2329,7 +2329,7 @@ tr.boxer .box-row1 {
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 4%;
+   padding-right: 3%;
 }
 .boxer .box-Manufac {
    display: table-cell;
@@ -2338,7 +2338,7 @@ tr.boxer .box-row1 {
    vertical-align: top;
    border: 0px;
    padding-right: 5%;
-   padding-bottom: 4%;
+   padding-bottom: 3%;
 }
 .boxer .box-Manufac2 {
    display: table-cell;
@@ -2348,7 +2348,7 @@ tr.boxer .box-row1 {
    border: 0px;
    padding-right: 5%;
    padding-left: 5%;
-   padding-bottom: 4%;
+   padding-bottom:3%;
 }
 .boxer .box-Device {
    display: table-cell;
@@ -2357,7 +2357,7 @@ tr.boxer .box-row1 {
    vertical-align: top;
    border: 0px;
    padding-right: 5%;
-   padding-bottom: 4%;
+   padding-bottom: 3%;
 }
 .boxer .box-Device2 {
    display: table-cell;
@@ -2367,7 +2367,7 @@ tr.boxer .box-row1 {
    border: 0px;
    padding-right: 5%;
     padding-left: 5%;
-   padding-bottom: 4%;
+   padding-bottom: 3%;
 }
 .boxer .box-Event {
    display: table-cell;
@@ -2375,7 +2375,7 @@ tr.boxer .box-row1 {
    text-align: left;
    vertical-align: top;
    border: 0px;
-     padding-bottom: 4%;
+     padding-bottom: 3%;
 }
 .boxer .box {
    display: table-cell;
@@ -2383,7 +2383,7 @@ tr.boxer .box-row1 {
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-bottom: 2%;
+   padding-bottom: 3%;
 }
 
 .boxer .box2 {
