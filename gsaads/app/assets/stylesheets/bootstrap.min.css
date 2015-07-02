@@ -1048,7 +1048,7 @@ a {
 a.goback {
 	color:#494949;
 	font-size: 0.65em;
-	text-decoration:underline
+	text-decoration:none
 }
 a:hover.goback {
 	color:#0585DF;
@@ -3896,7 +3896,7 @@ select[multiple].input-group-sm>.form-control, select[multiple].input-group-sm>.
 }
 .navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover {
 	color: #fff;
-	background-color: #080808
+	background-color: #585858
 }
 .navbar-inverse .navbar-nav>.disabled>a, .navbar-inverse .navbar-nav>.disabled>a:focus, .navbar-inverse .navbar-nav>.disabled>a:hover {
 	color: #444;

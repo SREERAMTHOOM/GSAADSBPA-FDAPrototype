@@ -2311,9 +2311,9 @@ body {
 .boxer {
    display: table;
    border-collapse: collapse;
-   margin-bottom: 25px;
+   margin-bottom: 20px;
    font-size: 1em;
-   line-height: 130%;
+   line-height: 120%;
    
 }
 
@@ -2329,38 +2329,33 @@ tr.boxer .box-row1 {
 } 
 .boxer .box-Date {
    display: table-cell;
-   width: 10%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 3%;
+   padding-right: 5%;
 }
 .boxer .box-Date {
    display: table-cell;
-   width: 10%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 1%;
+   padding-right: 5%;
 }
 .boxer .box-Manufac {
    display: table-cell;
-   width: 30%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 5%;
-   padding-bottom: 3%;
+   padding-right: 0px;
+   padding-bottom: 2%;
 }
 .boxer .box-Manufac2 {
    display: table-cell;
-   width: 40%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 5%;
-   padding-left: 5%;
-   padding-bottom:3%;
+   padding-right: 0px;
+   padding-bottom:2%;
 }
 .boxer .box-Manufac3 {
    display: table-cell;
@@ -2368,28 +2363,25 @@ tr.boxer .box-row1 {
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 5%;
+   padding-right: 0px;
    padding-left: 5%;
    padding-bottom:1%;
 }
 .boxer .box-Device {
    display: table-cell;
-   width: 30%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 5%;
-   padding-bottom: 3%;
+   padding-right: 0px;
+   padding-bottom: 2%;
 }
 .boxer .box-Device2 {
    display: table-cell;
-   width: 35%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 5%;
-    padding-left: 5%;
-   padding-bottom: 3%;
+   padding-right: 0px;
+   padding-bottom: 2%;
 }
 .boxer .box-Device3 {
    display: table-cell;
@@ -2397,17 +2389,16 @@ tr.boxer .box-row1 {
    text-align: left;
    vertical-align: top;
    border: 0px;
-   padding-right: 5%;
-    padding-left: 5%;
+   padding-right: 0px;
+   padding-left: 5%;
    padding-bottom: 1%;
 }
 .boxer .box-Event {
    display: table-cell;
-   width: 10%;
    text-align: left;
    vertical-align: top;
    border: 0px;
-     padding-bottom: 3%;
+   padding-bottom: 2%;
 }
 .boxer .box-Event3 {
    display: table-cell;
@@ -2534,7 +2525,7 @@ hr.spacer {
   padding-top: 10px;
   color: #ffffff;
   width:100%;
-  font-size:0.8em;
+  font-size:0.9em;
 }
 .site-footer .copy {
   font-size: 12px;
