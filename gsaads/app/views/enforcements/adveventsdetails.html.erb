@@ -3,21 +3,21 @@
 		<div class="contentsbox">
 			<h2>Latest Adverse Events &nbsp;<a href="/" class="goback">Go back >></a></h2>
 			<table class="boxer">
-				<thead >
-					<tr class="box-row">
-						<th class="box-Date">Date</th>
-						<th class="box-Manufac">Manufacturer</th>
-						<th class="box-Device">Device</th>
-						<th class="box-Event">Event</th>
+				<thead class="box-row">
+					<tr>
+						<th class="box-Date3">Date</th>
+						<th class="box-Manufac3">Manufacturer</th>
+						<th class="box-Device3">Device</th>
+						<th class="box-Event3">Event</th>
 					</tr>
 				</thead>
 				<tbody>
 				<% @advEvents.each_with_index do |result, index| %>
-					<tr class="box-row1">
-						<td class="box-Date"><%= format_datestr(result["date_of_event"]) %></td>
-						<td class="box-Manufac"><%= result["manufacturer_name"].titleize %></td>
-						<td class="box-Device"><%= result["device"][0]["generic_name"].titleize %></td>
-						<td class="box-Event"><%= result["event_type"] %></td>
+					<tr>
+						<td class="box-Date3"><%= format_datestr(result["date_of_event"]) %></td>
+						<td class="box-Manufac3"><%= result["manufacturer_name"].titleize %></td>
+						<td class="box-Device3"><%= result["device"][0]["generic_name"].titleize %></td>
+						<td class="box-Event3"><%= result["event_type"] %></td>
 					</tr>
 				<% end %>
 				</tbody>

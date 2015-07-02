@@ -4,19 +4,19 @@
 			<table class="boxer">
 				<thead class="box-row">
 					<tr>
-						<th class="box-Date">Date</th>
-						<th class="box-Manufac">Manufacturer</th>
-						<th class="box-Device">Status</th>
-						<th class="box-Event">Classification</th>
+						<th class="box-Date3">Date</th>
+						<th class="box-Manufac3">Manufacturer</th>
+						<th class="box-Device3">Status</th>
+						<th class="box-Event3">Classification</th>
 					</tr>
 				</thead>
 				<tbody class="box-row1">
 				<% @enfEvents.each_with_index do |result, index| %>
 					<tr >
-						<td class="box-Date"><%= format_datestr(result["recall_initiation_date"]) %></td>
-						<td class="box-Manufac2"><%= result["recalling_firm"].titleize %></td>
-						<td class="box-Device2"><%= result["status"] %></td>
-						<td class="box-Event"><%= result["classification"] %></td>
+						<td class="box-Date3"><%= format_datestr(result["recall_initiation_date"]) %></td>
+						<td class="box-Manufac3"><%= result["recalling_firm"].titleize %></td>
+						<td class="box-Device3"><%= result["status"] %></td>
+						<td class="box-Event3"><%= result["classification"] %></td>
 					</tr>
 				<% end %>
 				</tbody>

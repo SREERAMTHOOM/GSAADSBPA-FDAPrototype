@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-		<h2>Adverse Events and Enforcement reports by Device type and Year</h2>
+		<h2>Adverse Events and Enforcement Reports by Device Type and Year</h2>
 		<form role="form" class="form-inline">
 			<div class="form-group">
 				<%= select_tag "deviceType", options_for_select($deviceList, :selected=>params[:deviceType]), {:onchange => "this.form.submit();", :prompt => "Select Device", :class => "col-md-6" }%>
@@ -24,6 +24,7 @@
 
 	var options = {
 	  width: '100%',
+	  legend: { position: 'top', alignment: 'start' },
 	  chart: {
 		title: ''
 	  },

@@ -14,12 +14,12 @@
 <div class="row">
 	<div class="col-md-6 img-portfolio">
 		<div class="contentsbox">
-			<h3>Device Types (Top 25)</h3>
+			<center><h3>Device Types (Top 25)</h3></center>
 			<%= pie_chart "/enforcements/reports?type=advbymfr&startYear=" + @startYear+ "&mfr=" + @mfr, {discrete: true, enableClick: true, library: {chartArea:{left:0,top:10,width:"100%"}}} %>
 		</div>
 	</div>
 	<div class="col-md-6 img-portfolio">
-		<h3>Seriousness of Adverse Events</h3>
+		<center><h3>Seriousness of Adverse Events</h3></center>
 		<div id="chart_device" class="contentsbox">
 			<%= pie_chart "/enforcements/reports?type=advbytype&startYear=" + @startYear+ "&mfr=" + @mfr + "&deviceType=" + @deviceType, {discrete: true, library: {chartArea:{left:0,top:10,width:"100%"}}} %>
 		</div>

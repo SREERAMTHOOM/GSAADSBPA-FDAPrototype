@@ -250,6 +250,10 @@ table {
           box-sizing: border-box;
 }
 
+.aceinfo { font-size: 1em;
+	}
+.footertype { margin-top: -10px;
+	}
 .button {
   display: inline-block;
   padding: 10px 30px;
@@ -2331,6 +2335,14 @@ tr.boxer .box-row1 {
    border: 0px;
    padding-right: 3%;
 }
+.boxer .box-Date {
+   display: table-cell;
+   width: 10%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 1%;
+}
 .boxer .box-Manufac {
    display: table-cell;
    width: 30%;
@@ -2349,6 +2361,16 @@ tr.boxer .box-row1 {
    padding-right: 5%;
    padding-left: 5%;
    padding-bottom:3%;
+}
+.boxer .box-Manufac3 {
+   display: table-cell;
+   width: 40%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 5%;
+   padding-left: 5%;
+   padding-bottom:1%;
 }
 .boxer .box-Device {
    display: table-cell;
@@ -2369,6 +2391,16 @@ tr.boxer .box-row1 {
     padding-left: 5%;
    padding-bottom: 3%;
 }
+.boxer .box-Device3 {
+   display: table-cell;
+   width: 35%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-right: 5%;
+    padding-left: 5%;
+   padding-bottom: 1%;
+}
 .boxer .box-Event {
    display: table-cell;
    width: 10%;
@@ -2376,6 +2408,14 @@ tr.boxer .box-row1 {
    vertical-align: top;
    border: 0px;
      padding-bottom: 3%;
+}
+.boxer .box-Event3 {
+   display: table-cell;
+   width: 10%;
+   text-align: left;
+   vertical-align: top;
+   border: 0px;
+   padding-bottom: 1%;
 }
 .boxer .box {
    display: table-cell;
