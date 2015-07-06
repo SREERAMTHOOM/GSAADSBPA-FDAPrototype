@@ -23,7 +23,7 @@
 		</table>
 		<%= link_to "View More", "/enforcements/adveventsdetails", {:class => "button"} %><br>
 		<%= line_chart "/enforcements/reportgroupbyyear?type=device", discrete: true %>
-		<p>Total Adverse Events Reported by Year</p>
+		<center><strong><p>Total Adverse Events Reported by Year</p></strong></center>
 	</div>
 	<div class="col-md-6 img-portfolio">
 		<h2>Latest Enforcement Reports</h2>
@@ -49,6 +49,6 @@
 		</table>
 		<%= link_to "View More", "/enforcements/enfdetails", {:class => "button"} %><br>
 		<%= line_chart "/enforcements/reportgroupbyyear?type=enf", discrete: true %>
-		<p>Total Enforcement Reports Reported by Year</p>
+		<center><strong><p>Total Enforcement Reports Reported by Year</p></strong></center>
 	</div>
 </div>

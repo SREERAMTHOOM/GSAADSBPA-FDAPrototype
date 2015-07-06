@@ -256,8 +256,7 @@ table {
 	}
 .button {
   display: inline-block;
-  padding: 10px 30px;
-  margin-bottom: 20px;
+  padding: 5px 30px;
   border-radius: 20px;
   color: white;
   text-decoration: none;
@@ -2311,7 +2310,6 @@ body {
 .boxer {
    display: table;
    border-collapse: collapse;
-   margin-bottom: 20px;
    font-size: 1em;
    line-height: 120%;
    

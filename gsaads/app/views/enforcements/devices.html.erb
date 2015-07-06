@@ -10,7 +10,7 @@ $(window).smartresize(function(){
 		<h2>Adverse Events and Enforcement Reports by Device Type and Year</h2>
 		<form role="form" class="form-inline">
 			<div class="form-group">
-				<%= select_tag "deviceType", options_for_select(DEVICE_LIST, :selected=>params[:deviceType]), {:onchange => "this.form.submit();", :prompt => "Select Device", :style => "max-width:80%" }%>
+				<%= select_tag "deviceType", options_for_select(DEVICE_LIST, :selected=>params[:deviceType]), {:onchange => "this.form.submit();", :style => "max-width:80%" }%>
 			</div>
 		</form>
 	</div>
