@@ -1045,11 +1045,25 @@ a {
 	text-decoration: none;
 	font-size: 10pt;	
 }
+
+a.email {
+	color:#7d808c;
+	font-size: 1em;
+	text-decoration:none
+}
+
+a:hover.email {
+	color:#7d808c;
+	font-size: 1em;
+	background:none;
+}
+
 a.goback {
 	color:#494949;
 	font-size: 0.65em;
 	text-decoration:none
 }
+
 a:hover.goback {
 	color:#0585DF;
 	font-size: 0.65em;

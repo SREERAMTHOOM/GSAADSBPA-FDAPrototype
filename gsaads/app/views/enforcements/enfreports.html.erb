@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-lg-12">
-	   <h2>Highest Number of Enforcement Reports by Manufacturer for the Current Year (2015)</h2>
+	   <h1>Highest Number of Enforcement Reports by Manufacturer for the Current Year (2015)</h1>
 	</div>
 	<div class="row">
 		<div class="col-md-6 img-portfolio">
@@ -25,8 +25,7 @@
 		</div>
 		<div class="col-md-6 img-portfolio">
 			<div class="contentsbox">
-				<h3></h3>
-					<%= pie_chart "/enforcements/reports?type=enfbymfr", {discrete: true, library: {chartArea:{left:0,top:10,width:"100%"}}} %>
+				<%= pie_chart "/enforcements/reports?type=enfbymfr", {discrete: true, library: {chartArea:{left:0,top:10,width:"100%"}}} %>
 			</div>
 		</div>
 	</div>
