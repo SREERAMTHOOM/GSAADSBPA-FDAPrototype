@@ -1,7 +1,7 @@
 ##Installation instructions using Docker Container#
 
 ### Prerequisites
-1. Docker software
+1. Docker 1.6.0 software
 1. InBound HTTP Port:80 should be allowed on the server that is hosting Docker Container
 
 ### Running the application on a Linux server which hosts the Docker Container/image:
@@ -17,7 +17,7 @@
 
 	```rails s –b 0.0.0.0```
  
-4.  Open the application on a browser using the following URL:
+4.  Open the application in a browser using the following URL:
 
 	```http://IP of the Server hosting Docker image/```
 
@@ -28,7 +28,7 @@
 
 1. Ruby 2.0.0p643 and above
 2. Rails 4.2.2 and above
-3. INSTALL_DIR directory where the application can be installed
+3. ```<INSTALL_DIR>``` is the directory where application will be installed
 
 
 Application Installation Instructions:<br>
@@ -38,15 +38,15 @@ Application Installation Instructions:<br>
 
 	```git clone https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype```
 
-2. Create a working directory to INSTALL_DIR
+2. Create a working directory
 
-	```mkdir INSTALL_DIR/gsaads```
+	```mkdir <INSTALL_DIR>/gsaads```
 
-	```cd INSTALL_DIR/gsaads```
+	```cd <INSTALL_DIR>/gsaads```
 
 	```cp -R /home/<user>/temp/GSAADSBPA-FDAPrototype/source/gsaads/* INSTALL_DIR/gsaads/```
 
-3. Install the gems required by the application by going into the INSTALL_DIR/gsaads/
+3. Install gems required by the application
 
 	```bundle install```
 
@@ -54,6 +54,6 @@ Application Installation Instructions:<br>
 
 	```rails s –b 0.0.0.0```
 
-5. Open the application on a browser using the following URL:
+5. Open the application in a browser using the following URL:
 
 	```http://IP of the Server hosting Docker image:3000/```
