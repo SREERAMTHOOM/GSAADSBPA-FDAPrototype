@@ -33,8 +33,7 @@
 
 Application Installation Instructions:<br>
 
-1. Retrieve/clone the source code from github [Source](https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype/tree/master/source/gsaads "Source") into the TEMP_DIR for e.g 
-`/home/<user>/temp` 
+1. Retrieve/clone the source code from github [Source](https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype/tree/master/source/gsaads "Source") into a ```<TEMP_DIR>``` for e.g `/home/<user>/temp` 
 
 	```git clone https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype```
 
