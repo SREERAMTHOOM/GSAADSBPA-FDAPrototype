@@ -28,21 +28,25 @@
 
 1. Ruby 2.0.0p643 and above
 2. Rails 4.2.2 and above
-3. Phusion Passenger version 5.0.10 and above
+3. INSTALL_DIR directory where the application can be installed
 
 
 Application Installation Instructions:<br>
 
-1. Retrieve/clone the source code from github [Source](https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype/tree/master/source/gsaads "Source") into the INSTALL_DIR for e.g 
-`/app/gsaads` 
+1. Retrieve/clone the source code from github [Source](https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype/tree/master/source/gsaads "Source") into the TEMP_DIR for e.g 
+`/home/<user>/temp` 
 
-	```git clone https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype/tree/master/source/gsaads```
+	```git clone https://github.com/AceInfoSolutions/GSAADSBPA-FDAPrototype```
 
-2. Change the working directory to INSTALL_DIR
+2. Create a working directory to INSTALL_DIR
 
-	```cd /app/gsaads```
+	```mkdir INSTALL_DIR/gsaads```
 
-3. Install the gems required by the application
+	```cd INSTALL_DIR/gsaads```
+
+	```cp -R /home/<user>/temp/GSAADSBPA-FDAPrototype/source/gsaads/* INSTALL_DIR/gsaads/```
+
+3. Install the gems required by the application by going into the INSTALL_DIR/gsaads/
 
 	```bundle install```
 
@@ -52,4 +56,4 @@ Application Installation Instructions:<br>
 
 5. Open the application on a browser using the following URL:
 
-	```http://IP of the Server hosting Docker image/```
+	```http://IP of the Server hosting Docker image:3000/```
