@@ -1,7 +1,7 @@
 <html>
 
 <body lang=EN-US link=blue vlink=purple>
-
+<h5> This table provides links to the evidences for the corresponding criteria mentioned in Attachment E. </h5>
 <div class=WordSection1>
 
 <table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width=927
