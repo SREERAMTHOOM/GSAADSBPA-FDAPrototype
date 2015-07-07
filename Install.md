@@ -9,7 +9,7 @@
 
 1. Pull/Run the Docker image: 
 
-	```docker run –p 80:3000 –i –t aceinfo/gsaads-prototype``` 
+	```docker run –p 80:3000 –i –t aceinfo/gsaadsbpa-fdaprototype``` 
 2. Navigate to the application directory 
 
 	```cd /var/www/html/gsaads/```
